@@ -1,0 +1,26 @@
+/*副标题上划线*/
+.border_top_green {
+    border-top: 2px solid #60B878;
+}
+
+/*图片经过效果*/
+.img-hover img {
+    max-width: 100%;
+    -moz-transition: all 1s ease 0s;
+    -ms-transition: all 1s ease 0s;
+    -o-transition: all 1s ease 0s;
+    -webkit-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
+}
+
+.img-hover:hover img {
+    -moz-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+}
+/*区块阴影效果*/
+.shadow{
+    box-shadow: 0 0 50px #ddd;
+}
