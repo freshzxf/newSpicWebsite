@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>国家电投江西能源销售有限公司</title>
-    <link rel="stylesheet" href="assets/common/layui/css/layui.css">
-    <link rel="stylesheet" href="assets/common/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/common/css/base.css">
-    <link rel="stylesheet" href="assets/common/css/common.css">
-
-    <link rel="stylesheet" href="assets/lib/swiper/swiper.css">
+    <link rel="stylesheet" href="../../assets/common/layui/css/layui.css">
+    <link rel="stylesheet" href="../../assets/common/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/common/css/base.css">
+    <link rel="stylesheet" href="../../assets/common/css/common.css">
+    <link rel="stylesheet" href="../../assets/lib/swiper/swiper.css">
 
     <style>
         /*logo及header*/
@@ -50,26 +49,26 @@
 
         /*成功案例*/
 
-        #successCase {
+        .success_case {
             position: relative;
             width: 1200px;
             margin: 0 auto
         }
 
-        #successCase .swiper-container {
+        .success_case .swiper-container {
             padding-bottom: 60px;
         }
 
-        #successCase  .swiper-slide {
+        .success_case  .swiper-slide {
             width: 520px;
             height: 408px;
             background: #fff;
             box-shadow: 0 8px 30px #1c2734;
         }
-        #successCase  .swiper-slide img{
+        .success_case  .swiper-slide img{
             display:block;
         }
-        #successCase  .swiper-slide p {
+        .success_case  .swiper-slide p {
             line-height: 98px;
             padding-top: 0;
             text-align: center;
@@ -78,12 +77,12 @@
             margin: 0;
         }
 
-        #successCase .swiper-pagination {
+        .success_case .swiper-pagination {
             width: 100%;
             bottom: 20px;
         }
 
-        #successCase .swiper-pagination-bullets .swiper-pagination-bullet {
+        .success_case .swiper-pagination-bullets .swiper-pagination-bullet {
             margin: 0 5px;
             border: 3px solid #fff;
             background-color: #d5d5d5;
@@ -92,37 +91,51 @@
             opacity: 1;
         }
 
-        #successCase .swiper-pagination-bullets .swiper-pagination-bullet-active {
+        .success_case .swiper-pagination-bullets .swiper-pagination-bullet-active {
             border: 3px solid #5fb878;
             background-color: #fff;
         }
 
-        #successCase .swiper-button-prev {
+        .success_case .swiper-button-prev {
             left: -30px;
             width: 45px;
             height: 45px;
-            background: url(wm_button_icon.png) no-repeat;
+            background: url(assets/img/case/wm_button_icon.png) no-repeat;
             background-position: 0 0;
             background-size: 100%;
         }
 
-        #successCase .swiper-button-prev:hover {
+        .success_case .swiper-button-prev:hover {
             background-position: 0 -46px;
             background-size: 100%
         }
 
-        #successCase .swiper-button-next {
+        .success_case .swiper-button-next {
             right: -30px;
             width: 45px;
             height: 45px;
-            background: url(wm_button_icon.png) no-repeat;
+            background: url(assets/img/case/wm_button_icon.png) no-repeat;
             background-position: 0 -93px;
             background-size: 100%;
         }
 
-        #successCase .swiper-button-next:hover {
+        .success_case .swiper-button-next:hover {
             background-position: 0 -139px;
             background-size: 100%
+        }
+
+        .partners{overflow:hidden;width: 1200px}
+        .partners ul li{float:left;padding: 20px 0 50px 0}
+        .partners ul li img{
+            margin: 0 10px;
+            -moz-transition: all 1s ease 0s;
+            -ms-transition: all 1s ease 0s;
+            -o-transition: all 1s ease 0s;
+            -webkit-transition: all 1s ease 0s;
+            transition: all 1s ease 0s;
+        }
+        .partners ul li img:hover{
+            box-shadow: 0 10px 50px #c5c5c5;
         }
 
     </style>
@@ -132,7 +145,7 @@
 <div class="layui-fluid layui-bg-black layui-header">
     <div class="layui-main">
         <a class="logo" href="index.html">
-            <img src="assets/common/img/logo.png" alt="layui">
+            <img src="../../assets/common/img/logo.png" alt="layui">
         </a>
         <!--未登录-->
         <div class="">
@@ -151,7 +164,7 @@
                 <li class="layui-nav-item"><a href="">关于我们</a></li>
             </ul>
             <div class="layui-btn-group layui-layout-right" style="top: 11px">
-                <a href="" class="layui-btn">登录</a>
+                <a href="../login/login.html" class="layui-btn">登录</a>
                 <a href="" class="layui-btn layui-btn-normal">注册</a>
                 <a href="" class="layui-btn layui-btn-danger">管理员</a>
             </div>
@@ -172,7 +185,7 @@
                 <li class="layui-nav-item"><a href="">关于我们</a></li>
                 <li class="layui-nav-item layui-hide"><a href="">客户中心</a></li>
                 <li class="layui-nav-item ">
-                    <a href="javascript:;"><img src="assets/common/img/avatars/avatar0.jpg"
+                    <a href="javascript:;"><img src="../../assets/common/img/avatars/avatar0.jpg"
                                                 class="layui-nav-img">江铜集团</a>
                     <dl class="layui-nav-child tc">
                         <dd><a href="javascript:;">客户中心</a></dd>
@@ -187,8 +200,8 @@
 <!--首页轮播-->
 <div class="layui-carousel" id="banner">
     <div carousel-item>
-        <div style="background: url('assets/common/img/banners/jdt1.jpg') center center no-repeat"></div>
-        <div style="background: url('assets/common/img/banners/jdt2.jpg') center center no-repeat"></div>
+        <div style="background: url('assets/img/banners/jdt1.jpg') center center no-repeat"></div>
+        <div style="background: url('assets/img/banners/jdt2.jpg') center center no-repeat"></div>
     </div>
 </div>
 <!--快捷入口-->
@@ -199,7 +212,7 @@
             <p class="pt5 mb10 gray dis_table auto_ctr border_top_green">Services</p>
         </div>
         <div class="layui-col-xs2 layui-anim layui-anim-scale">
-            <a href="" title="客户注册">
+            <a href="../login/login.html" title="客户注册">
                 <i class="fa fa-user fast-entry mb20"></i>
                 <h3 class="mb10 f25 fw300">用户登录</h3>
                 <p>安全快速登录</p>
@@ -254,7 +267,7 @@
             <div class="layui-col-xs3">
                 <a class="img-hover" href="" title="行业翘楚">
                     <div class="img_box mb10">
-                        <img class="mw" src="assets/common/img/advantage/advantage01.jpeg">
+                        <img class="mw" src="assets/img/advantage/advantage01.jpeg">
                     </div>
                     <fieldset class="layui-field-title">
                         <legend class="f20 pl10 pr10">行业翘楚</legend>
@@ -265,7 +278,7 @@
             <div class="layui-col-xs3">
                 <a class="img-hover" href="" title="便捷操作">
                     <div class="img_box mb10">
-                        <img class="mw" src="assets/common/img/advantage/advantage02.jpeg">
+                        <img class="mw" src="assets/img/advantage/advantage02.jpeg">
                     </div>
                     <fieldset class="layui-field-title">
                         <legend class="f20 pl10 pr10">便捷操作</legend>
@@ -276,7 +289,7 @@
             <div class="layui-col-xs3">
                 <a class="img-hover" href="" title="资深团队">
                     <div class="img_box mb10">
-                        <img class="mw" src="assets/common/img/advantage/advantage03.jpeg">
+                        <img class="mw" src="assets/img/advantage/advantage03.jpeg">
                     </div>
                     <fieldset class="layui-field-title">
                         <legend class="f20 pl10 pr10">资深团队</legend>
@@ -287,7 +300,7 @@
             <div class="layui-col-xs3">
                 <a class="img-hover" href="" title="全程服务">
                     <div class="img_box mb10">
-                        <img class="mw" src="assets/common/img/advantage/advantage04.jpeg">
+                        <img class="mw" src="assets/img/advantage/advantage04.jpeg">
                     </div>
                     <fieldset class="layui-field-title">
                         <legend class="f20 pl10 pr10">全程服务</legend>
@@ -330,20 +343,20 @@
             <h3 class="mb10 f35 fw300">成功案例</h3>
             <p class="pt5 mb10 gray dis_table auto_ctr border_top_green">Success</p>
         </div>
-        <div id="successCase">
+        <div id="successCase" class="success_case">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="assets/common/img/case/case01.png" /><p class="layui-elip pl10 pr10">什么时候什么时候的一张签约合影</p>
+                        <img src="assets/img/case/case01.png" /><p class="layui-elip pl10 pr10">什么时候什么时候的一张签约合影</p>
                     </div>
                     <div class="swiper-slide">
-                        <img src="assets/common/img/case/case02.png" /><p class="layui-elip pl10 pr10">什么时候什么时候的一张签约合影</p>
+                        <img src="assets/img/case/case02.png" /><p class="layui-elip pl10 pr10">什么时候什么时候的一张签约合影</p>
                     </div>
                     <div class="swiper-slide">
-                        <img src="assets/common/img/case/case01.png" /><p class="layui-elip pl10 pr10">什么时候什么时候的一张签约合影</p>
+                        <img src="assets/img/case/case01.png" /><p class="layui-elip pl10 pr10">什么时候什么时候的一张签约合影</p>
                     </div>
                     <div class="swiper-slide">
-                        <img src="assets/common/img/case/case02.png" /><p class="layui-elip pl10 pr10">什么时候什么时候的一张签约合影</p>
+                        <img src="assets/img/case/case02.png" /><p class="layui-elip pl10 pr10">什么时候什么时候的一张签约合影</p>
                     </div>
                 </div>
             </div>
@@ -353,26 +366,86 @@
         </div>
     </div>
 </div>
-<!--成功案例-->
+<!--合作伙伴-->
 <div class="layui-main">
     <div class="tc pt50 pb50 layui-anim layui-anim-scale">
         <h3 class="mb10 f35 fw300">合作伙伴</h3>
         <p class="pt5 mb10 gray dis_table auto_ctr border_top_green">Success</p>
     </div>
-    <div id="marquee1">
+    <div id="partners" class="partners">
         <ul>
-            <li><img src="assets/common/img/partners/jxgdtgc.png"></li>
-            <li><img src="assets/common/img/partners/jxgdtgc.png"></li>
-            <li><img src="assets/common/img/partners/jxgdtgc.png"></li>
-            <li><img src="assets/common/img/partners/jxgdtgc.png"></li>
+            <li><img src="assets/img/partners/gdjj.png" class="border_ddd"></li>
+            <li><img src="assets/img/partners/gdt.png" class="border_ddd"></li>
+            <li><img src="assets/img/partners/gjdtjxdlyxgs.png" class="border_ddd"></li>
+            <li><img src="assets/img/partners/gjdw.png" class="border_ddd"></li>
+            <li><img src="assets/img/partners/gjnyj.png" class="border_ddd"></li>
+            <li><img src="assets/img/partners/gxhl.png" class="border_ddd"></li>
+            <li><img src="assets/img/partners/hjh.png" class="border_ddd"></li>
+            <li><img src="assets/img/partners/jxgdtgc.png" class="border_ddd"></li>
+            <li><img src="assets/img/partners/jxgdtxj.png" class="border_ddd"></li>
+            <li><img src="assets/img/partners/jxgdtyxgs.png" class="border_ddd"></li>
+            <li><img src="assets/img/partners/jyzx.png" class="border_ddd"></li>
+            <li><img src="assets/img/partners/nyj.png" class="border_ddd"></li>
         </ul>
     </div>
 </div>
+<!--页脚-->
+<div class="layui-bg-cyan">
+    <div class="layui-main pt50 pb50">
+        <div class="layui-row layui-col-space30 lgray">
+            <div class="layui-col-xs6">
+                <blockquote class="layui-elem-quote lh0 mb20 white f20 bg_none">关于我们<a href="about.html" class="fr lgray">了解详情</a></blockquote>
+                <p class=" lh200">
+                    <span class="fa fa-phone mr5 white" title="电话号码"></span><span class="mr10" title="电话号码">0791-83953621</span>
+                    <span class="fa fa-send ml10 mr5 white" title="企业邮箱"></span><span title="企业邮箱">3151511@spic.com</span>
+                </p>
+                <p class=" lh200">
+                    <span class="fa fa-fax mr5 white" title="传真号码"></span><span class="mr10" title="传真号码">0791-83953621</span>
+                    <span class="fa fa-map-marker ml10 mr5 white" title="企业地址"></span><span title="企业地址">江西省南昌市青山湖区艾溪湖北路66号</span>
+                </p>
+                <p class="f14 lh200">创新创造是我们的特质。国家电投倡导全面创新创造，将创新融入技术、产品、制度、组织、文化、观念等方方面面；倡导全员创新创造，使创新创造成为国家电投人的品格。
+                </p>
+                <div class="mt30">
+                    <blockquote class="layui-elem-quote lh0 mb20 white f20 bg_none">我们团队</blockquote>
+                    <ul class="group_list_xs">
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group1-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="layui-col-xs6">
+                <blockquote class="layui-elem-quote lh0 mb20 white f20 bg_none">企业位置</blockquote>
+                <div id="mapContainer" class="h300"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--版权声明-->
+<div class="layui-bg-black">
+    <div class="layui-main pt10 pb10 tc lgray">
+        <p class="f14">2017 © 国电电投江西能源销售有限公司. ALL Rights Reserved</p>
+    </div>
+</div>
 
-<script src="assets/common/js/jquery.min.js"></script>
-<script src="assets/common/layui/layui.js"></script>
-<script src="assets/lib/swiper/swiper.min.js"></script>
-<script src="assets/lib/kxbdmarquee/jquery.kxbdmarquee.js"></script>
+<script src="../../assets/common/js/jquery.min.js"></script>
+<script src="../../assets/common/layui/layui.js"></script>
+<script src="../../assets/lib/swiper/swiper.min.js"></script>
+<script src="../../assets/lib/kxbdmarquee/jquery.kxbdmarquee.js"></script>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=6ZTPFF2XmLknls8ByATGmZjD7G15gkvI"></script>
+<script src="../../assets/lib/baiduMap/jquery.baiduMap.min.js" type="text/javascript"></script>
+<script src="../../assets/common/js/common.js" type="text/javascript"></script>
 <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
 <!--[if lt IE 9]>
 <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -381,10 +454,15 @@
 
 <script>
     layui.config({
-        base: './assets/jsModules/' //你存放新模块的目录，注意，不是layui的模块目录
+        base: 'assets/js/' //你存放新模块的目录，注意，不是layui的模块目录
     }).use('index'); //加载入口
 
-    $("#marquee1").kxbdMarquee({direction:"left"});
+    $("#partners").kxbdMarquee({
+        direction:"left",
+        isEqual: true
+    });
+
+    commonModules.init();
 </script>
 
 </body>

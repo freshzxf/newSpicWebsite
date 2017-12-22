@@ -69,7 +69,8 @@ layui.define(['layer', 'form','element','carousel','util'], function(exports){
 
             }
         }
-    })
+    });
+
     //固定右下角工具
     util.fixbar({
         bar1: true
@@ -78,7 +79,7 @@ layui.define(['layer', 'form','element','carousel','util'], function(exports){
         ,bgcolor: '#393D49'
         ,click: function(type){
             if(type === 'bar1'){
-                layer.msg('打算用来做客服')
+                openwindow('http://p.qiao.baidu.com/cps/chat?siteId=11555035&userId=22742801','', '585','540')
             } else if(type === 'bar2') {
                 layer.msg('打算用来做帮助文档')
             }else if(type === 'top'){
