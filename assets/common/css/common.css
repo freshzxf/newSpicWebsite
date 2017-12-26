@@ -1,6 +1,25 @@
+/*导航栏logo*/
+.logo {position: absolute;left: 0;top: 10px;}
+.logo img {height: 40px;}
+
+/*页面banner标题*/
+.top-title{
+    background-position: top center;
+    padding: 50px 0;
+}
+.top-title h1 {
+    display: inline-block;
+    font-size: 40px;
+    color: #fff;
+    font-weight: 100;
+}
+
 /*副标题上划线*/
-.border_top_green {
+.border_top_green_2px {
     border-top: 2px solid #60B878;
+}
+.border_top_black_2px {
+    border-top: 2px solid #1c2734;
 }
 .border_ddd{
     border: 1px solid #ddd;

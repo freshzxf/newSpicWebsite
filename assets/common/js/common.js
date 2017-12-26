@@ -1,7 +1,46 @@
-var commonModules = function () {
+/**
+ 各个页面共用的common模块
+ **/
+layui.define(['layer','util'], function(exports){
+    var layer = layui.layer,
+        util = layui.util;
+    function openwindow(url,name,iWidth,iHeight){
+        // url 转向网页的地址
+        // name 网页名称，可为空
+        // iWidth 弹出窗口的宽度
+        // iHeight 弹出窗口的高度
+        //window.screen.height获得屏幕的高，window.screen.width获得屏幕的宽
+        var iTop = (window.screen.height-30-iHeight)/2; //获得窗口的垂直位置;
+        var iLeft = (window.screen.width-10-iWidth)/2; //获得窗口的水平位置;
+        window.open(url,name,'height='+iHeight+',,innerHeight='+iHeight+',width='+iWidth+',innerWidth='+iWidth+',top='+iTop+',left='+iLeft+',toolbar=no,menubar=no,scrollbars=auto,resizeable=no,location=no,status=no');
+    };
 
-    // 定义渲染百度地图函数
-    var handleBaiduMap = function () {
+    /*在线客服按钮点击事件*/
+    $('#onlineChatBtn').on('click',function () {
+        openwindow('http://p.qiao.baidu.com/cps/chat?siteId=11555035&userId=22742801','', '585','540')
+    });
+
+    /*固定右下角工具*/
+    util.fixbar({
+        bar1: true
+        ,bar2: true
+        ,css: {right: 50, bottom: 100}
+        ,bgcolor: '#393D49'
+        ,click: function(type){
+            if(type === 'bar1'){
+                openwindow('http://p.qiao.baidu.com/cps/chat?siteId=11555035&userId=22742801','', '585','540')
+            } else if(type === 'bar2') {
+                window.open('../help/help-hall.html')
+            }else if(type === 'top'){
+                $('html,body').animate({
+                    'scrollTop': 0
+                }, 500);
+            }
+        }
+    });
+
+    /*百度地图*/
+    !function(){
         var points = [{
             id: 1,
             lng: 115.980489,
@@ -35,25 +74,6 @@ var commonModules = function () {
             points: points // 标注点--id(唯一标识)
         });
         var data = map.getPosition();
-    };
-    return {
-        init: function () {
-            handleBaiduMap();
-        },
-        /*scrollTop: function () {
-            App.scrollTo();
-        }*/
-    };
-}();
-
-
-function openwindow(url,name,iWidth,iHeight){
-    // url 转向网页的地址
-    // name 网页名称，可为空
-    // iWidth 弹出窗口的宽度
-    // iHeight 弹出窗口的高度
-    //window.screen.height获得屏幕的高，window.screen.width获得屏幕的宽
-    var iTop = (window.screen.height-30-iHeight)/2; //获得窗口的垂直位置;
-    var iLeft = (window.screen.width-10-iWidth)/2; //获得窗口的水平位置;
-    window.open(url,name,'height='+iHeight+',,innerHeight='+iHeight+',width='+iWidth+',innerWidth='+iWidth+',top='+iTop+',left='+iLeft+',toolbar=no,menubar=no,scrollbars=auto,resizeable=no,location=no,status=no');
-}
+    }();
+    exports('common'); //注意，这里是模块输出的核心，模块名必须和use时的模块名一致
+});

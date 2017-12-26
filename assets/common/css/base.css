@@ -61,6 +61,7 @@
 .white,a.white{color: #fff}
 .black,a.black{color: #333;}
 .darkblack,a.darkblack{color: black;}
+.green{color: #60B878}
 .lh0{line-height:0}
 .lh100{line-height:100%}
 .lh150{line-height:150%}
@@ -76,6 +77,7 @@
 .tl{text-align:left}
 .tc{text-align:center}
 .tr{text-align:right}
+.tj{text-align:justify}
 .text_indent{text-indent: 2em}
 .fl{float:left;display:inline}
 .fr{float:right;display:inline}
@@ -136,6 +138,8 @@
 .h{height:100%}
 .mh{max-height:100%}
 /*边距*/
+.m5{margin:5px}
+.m8{margin:8px}
 .m10{margin:10px}
 .m15{margin:15px}
 .m30{margin:30px}
@@ -170,6 +174,8 @@
 .mr50{margin-right:50px}
 .mr100{margin-right:100px}
 
+.p5{padding:5px;}
+.p8{padding:8px;}
 .p10{padding:10px;}
 .p15{padding:15px;}
 .p30{padding:30px;}
