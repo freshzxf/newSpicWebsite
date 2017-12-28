@@ -25,6 +25,9 @@
     border: 1px solid #ddd;
 }
 
+/*头像边框*/
+.border_tx_lcyan{border: 2px solid #636a7f;}
+
 /*图片经过效果*/
 .img-hover img {
     max-width: 100%;
