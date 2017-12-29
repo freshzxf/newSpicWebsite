@@ -15,6 +15,42 @@ layui.define(['layer','util'], function(exports){
         window.open(url,name,'height='+iHeight+',,innerHeight='+iHeight+',width='+iWidth+',innerWidth='+iWidth+',top='+iTop+',left='+iLeft+',toolbar=no,menubar=no,scrollbars=auto,resizeable=no,location=no,status=no');
     };
 
+    $('#login').on('click',function () {
+        layer.open({
+            type: 2,
+            title: '用户登录',
+            shadeClose: true,
+            shade: 0.5,
+            area : ['440px' , '420px'],
+            skin: 'layui-layer-molv',
+            content: '../login/login_iframe.html' //iframe的url
+        });
+    });
+
+    $('#reg').on('click',function () {
+        layer.open({
+            type: 2,
+            title: '用户注册',
+            shadeClose: true,
+            shade: 0.5,
+            area : ['440px' , '480px'],
+            skin: 'layui-layer-molv',
+            content: '../login/reg_iframe.html' //iframe的url
+        });
+    });
+
+    $('#admin').on('click',function () {
+        layer.open({
+            type: 2,
+            title: '用户注册',
+            shadeClose: true,
+            shade: 0.5,
+            area : ['440px' , '480px'],
+            skin: 'layui-layer-molv',
+            content: '../login/reg_iframe.html' //iframe的url
+        });
+    });
+
     /*在线客服按钮点击事件*/
     $('#onlineChatBtn').on('click',function () {
         openwindow('http://p.qiao.baidu.com/cps/chat?siteId=11555035&userId=22742801','', '585','540')
@@ -30,7 +66,7 @@ layui.define(['layer','util'], function(exports){
             if(type === 'bar1'){
                 openwindow('http://p.qiao.baidu.com/cps/chat?siteId=11555035&userId=22742801','', '585','540')
             } else if(type === 'bar2') {
-                window.open('../help/help-hall.html')
+                window.open('../help/help_hall.html')
             }else if(type === 'top'){
                 $('html,body').animate({
                     'scrollTop': 0

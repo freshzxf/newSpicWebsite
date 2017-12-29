@@ -54,8 +54,8 @@
         }
 
         .success_case  .swiper-slide {
-            width: 520px;
-            height: 408px;
+            width: 500px;
+            height: 400px;
             background: #fff;
             box-shadow: 0 8px 30px #1c2734;
         }
@@ -145,7 +145,7 @@
         <div class="">
             <ul class="layui-nav layui-layout-right tr" style="right: 210px" lay-filter="">
                 <li class="layui-nav-item layui-this"><a href="index.html">首页</a></li>
-                <li class="layui-nav-item"><a href="">合作意向</a></li>
+                <li class="layui-nav-item"><a href="../intorduce/intorduce.html">合作意向</a></li>
                 <li class="layui-nav-item">
                     <a href="../news/news.html">政策行业动态</a>
                     <dl class="layui-nav-child tc">
@@ -157,9 +157,9 @@
                 <li class="layui-nav-item"><a href="../about/about.html">关于我们</a></li>
             </ul>
             <div class="layui-btn-group layui-layout-right" style="top: 11px">
-                <a href="../login/login.html" class="layui-btn">登录</a>
-                <a href="../login/reg.html" class="layui-btn layui-btn-normal">注册</a>
-                <a href="../login/login_admin.html" class="layui-btn layui-btn-danger">管理员</a>
+                <a id="login" href="javascript:;" class="layui-btn">登录</a>
+                <a id="reg" href="javascript:;" class="layui-btn layui-btn-normal">注册</a>
+                <a id="admin" href="javascript:;" class="layui-btn layui-btn-danger">管理员</a>
             </div>
         </div>
         <!--已登陆-->
@@ -345,16 +345,16 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="assets/img/case/case01.png" /><p class="layui-elip pl10 pr10">什么时候什么时候的一张签约合影</p>
+                        <img src="assets/img/case/case01.png" class="w500 h300" /><p class="layui-elip pl10 pr10">什么时候什么时候的一张签约合影</p>
                     </div>
                     <div class="swiper-slide">
-                        <img src="assets/img/case/case02.png" /><p class="layui-elip pl10 pr10">什么时候什么时候的一张签约合影</p>
+                        <img src="assets/img/case/case02.png" class="w500 h300" /><p class="layui-elip pl10 pr10">什么时候什么时候的一张签约合影</p>
                     </div>
                     <div class="swiper-slide">
-                        <img src="assets/img/case/case01.png" /><p class="layui-elip pl10 pr10">什么时候什么时候的一张签约合影</p>
+                        <img src="assets/img/case/case01.png" class="w500 h300" /><p class="layui-elip pl10 pr10">什么时候什么时候的一张签约合影</p>
                     </div>
                     <div class="swiper-slide">
-                        <img src="assets/img/case/case02.png"/><p class="layui-elip pl10 pr10">什么时候什么时候的一张签约合影</p>
+                        <img src="assets/img/case/case02.png" class="w500 h300"/><p class="layui-elip pl10 pr10">什么时候什么时候的一张签约合影</p>
                     </div>
                 </div>
             </div>
@@ -372,18 +372,18 @@
     </div>
     <div id="partners" class="partners">
         <ul>
-            <li><img src="assets/img/partners/gdjj.png" class="border_ddd"></li>
-            <li><img src="assets/img/partners/gdt.png" class="border_ddd"></li>
-            <li><img src="assets/img/partners/gjdtjxdlyxgs.png" class="border_ddd"></li>
-            <li><img src="assets/img/partners/gjdw.png" class="border_ddd"></li>
-            <li><img src="assets/img/partners/gjnyj.png" class="border_ddd"></li>
-            <li><img src="assets/img/partners/gxhl.png" class="border_ddd"></li>
-            <li><img src="assets/img/partners/hjh.png" class="border_ddd"></li>
-            <li><img src="assets/img/partners/jxgdtgc.png" class="border_ddd"></li>
-            <li><img src="assets/img/partners/jxgdtxj.png" class="border_ddd"></li>
-            <li><img src="assets/img/partners/jxgdtyxgs.png" class="border_ddd"></li>
-            <li><img src="assets/img/partners/jyzx.png" class="border_ddd"></li>
-            <li><img src="assets/img/partners/nyj.png" class="border_ddd"></li>
+            <li><img src="assets/img/partners/gdjj.png" class="border_ddd w150 h100"></li>
+            <li><img src="assets/img/partners/gdt.png" class="border_ddd w150 h100"></li>
+            <li><img src="assets/img/partners/gjdtjxdlyxgs.png" class="border_ddd w150 h100"></li>
+            <li><img src="assets/img/partners/gjdw.png" class="border_ddd w150 h100"></li>
+            <li><img src="assets/img/partners/gjnyj.png" class="border_ddd w150 h100"></li>
+            <li><img src="assets/img/partners/gxhl.png" class="border_ddd w150 h100"></li>
+            <li><img src="assets/img/partners/hjh.png" class="border_ddd w150 h100"></li>
+            <li><img src="assets/img/partners/jxgdtgc.png" class="border_ddd w150 h100"></li>
+            <li><img src="assets/img/partners/jxgdtxj.png" class="border_ddd w150 h100"></li>
+            <li><img src="assets/img/partners/jxgdtyxgs.png" class="border_ddd w150 h100"></li>
+            <li><img src="assets/img/partners/jyzx.png" class="border_ddd w150 h100"></li>
+            <li><img src="assets/img/partners/nyj.png" class="border_ddd w150 h100"></li>
         </ul>
     </div>
 </div>
@@ -400,8 +400,6 @@
                 <p class=" lh200">
                     <span class="fa fa-fax mr5 white" title="传真号码"></span><span class="mr10" title="传真号码">0791-83953621</span>
                     <span class="fa fa-map-marker ml10 mr5 white" title="企业地址"></span><span title="企业地址">江西省南昌市青山湖区艾溪湖北路66号</span>
-                </p>
-                <p class="f14 lh200">创新创造是我们的特质。国家电投倡导全面创新创造，将创新融入技术、产品、制度、组织、文化、观念等方方面面；倡导全员创新创造，使创新创造成为国家电投人的品格。
                 </p>
                 <div class="mt30">
                     <blockquote class="layui-elem-quote lh0 mb20 white f20 bg_none">我们团队</blockquote>
