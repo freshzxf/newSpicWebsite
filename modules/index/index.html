@@ -36,7 +36,11 @@
             height: 200px;
             overflow: hidden;
         }
-
+        
+        /*客户评价*/
+        .layui-carousel>[carousel-item]>*{
+            background-color: #fff;
+        }
         /*成功案例*/
 
         .success_case {
@@ -114,7 +118,7 @@
             background-size: 100%
         }
 
-        .partners{overflow:hidden;width: 1200px}
+        .partners{overflow:hidden;width: 1200px;margin: auto}
         .partners ul li{float:left;padding: 20px 0 50px 0}
         .partners ul li img{
             margin: 0 10px;
@@ -307,19 +311,24 @@
         <h3 class="mb10 f35 fw300">客户信赖</h3>
         <p class="pt5 mb10 gray dis_table auto_ctr border_top_black_2px">Customer</p>
     </div>
-    <div class="layui-carousel pl100 pr100 shadow auto_ctr" id="customerVoice">
+    <div class="layui-carousel pl100 pr100 shadow auto_ctr bg_fff radius_2" id="customerVoice">
         <div carousel-item>
             <div>
                 <div class="pa_mid">
                     <div class="tc lh200">国家电投所做的工作让我非常肃然起敬，在中国来讲，瑞达恒是一个非常了不起的单位，尤其是他们总结出的这些全国性的数据，确实很了不起，做这个工作是非常有意义的。</div>
-                    <div class="tr mt20">——<span class="judge_author fb">王建平</span><span class="ml10">中国能源建设股份有限公司</span><span class="ml5">董事长</span></div>
-
+                    <div class="tr pt15" style="line-height: 60px">
+                        <img src="../../assets/common/img/logo/ofg.jpg" class="circle w60 h60 border_ddd fl">
+                        <span class="fb f18"><span>——</span>中国能源建设股份有限公司</span>
+                    </div>
                 </div>
             </div>
             <div>
                 <div class="pa_mid">
                     <div class="tc lh200">国家电投江西能源销售有限公司高效的执行力打动了我这个平时爱以执行力强而自居的人，加之专业的服务团队，极大的方便了业务的办理，这将是我们集团的长期合作伙伴。</div>
-                    <div class="tr mt20">——<span class="judge_author fb">屈峰</span><span class="ml10">中能集团</span><span class="ml5">董事长</span></div>
+                    <div class="tr pt15" style="line-height: 60px">
+                        <img src="../../assets/common/img/logo/ofg.jpg" class="circle w60 h60 border_ddd fl">
+                        <span class="fb f18"><span>——</span>中国能源建设股份有限公司</span>
+                    </div>
                 </div>
             </div>
         </div>
