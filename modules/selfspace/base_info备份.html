@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,26 +12,91 @@
     <link rel="stylesheet" href="../../assets/common/css/common.css">
     <style>
 
-        #notice{max-width:1000px;overflow:hidden;}
-        #notice ul li{float:left;margin:0 10px}
+        #notice {
+            max-width: 1000px;
+            overflow: hidden;
+        }
 
-        .fly-panel{margin-bottom: 15px;border-radius: 2px;background-color: #fff;box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);}
-        .fly-panel[pad20]{padding: 20px;}
-        .fly-panel-title{position: relative; height: 50px; line-height: 50px; padding: 0 15px; border-bottom: 1px dotted #E9E9E9; color: #333; border-radius: 2px 2px 0 0; font-size: 14px;}
-        .fly-panel-main{padding: 10px 15px;}
-        .fly-panel-border{border: 1px solid #e6e6e6; box-shadow: none;}
-        .fly-panel-border .fly-panel-title{border-bottom: 1px solid #e6e6e6;}
+        #notice ul li {
+            float: left;
+            margin: 0 10px
+        }
+
+        .fly-panel {
+            margin-bottom: 15px;
+            border-radius: 2px;
+            background-color: #fff;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05);
+        }
+
+        .fly-panel[pad20] {
+            padding: 20px;
+        }
+
+        .fly-panel-title {
+            position: relative;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 15px;
+            border-bottom: 1px dotted #E9E9E9;
+            color: #333;
+            border-radius: 2px 2px 0 0;
+            font-size: 14px;
+        }
+
+        .fly-panel-main {
+            padding: 10px 15px;
+        }
+
+        .fly-panel-border {
+            border: 1px solid #e6e6e6;
+            box-shadow: none;
+        }
+
+        .fly-panel-border .fly-panel-title {
+            border-bottom: 1px solid #e6e6e6;
+        }
 
         /* 用户中心 */
-        body .fly-user-main{position: relative; min-height: 600px;}
-        .fly-user-main>.layui-nav{position: absolute; left: 0; top: 0; z-index: 1000; height: 100%; padding: 10px 0;}
-        .fly-user-main>.layui-nav .layui-icon{position: relative; top: 2px; font-size: 20px; margin-right: 10px;}
-        .fly-user-main>.fly-panel{min-height: 575px; margin: 0 0 10px 215px;}
-        .fly-user-main .fly-none{min-height: 0;}
-        .fly-panel-user[pad20]{padding-top: 5px;}
+        body .fly-user-main {
+            position: relative;
+            min-height: 600px;
+        }
+
+        .fly-user-main > .layui-nav {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            height: 100%;
+            padding: 10px 0;
+        }
+
+        .fly-user-main > .layui-nav .layui-icon {
+            position: relative;
+            top: 2px;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .fly-user-main > .fly-panel {
+            min-height: 575px;
+            margin: 0 0 10px 215px;
+        }
+
+        .fly-user-main .fly-none {
+            min-height: 0;
+        }
+
+        .fly-panel-user[pad20] {
+            padding-top: 5px;
+        }
 
         /*必填项标识*/
-        .layui-badge-dot.layui-badge.pa{left: 8px;top: 14px}
+        .layui-badge-dot.layui-badge.pa {
+            left: 8px;
+            top: 14px
+        }
 
 
     </style>
@@ -41,11 +105,11 @@
 <!--顶部导航-->
 <div class="layui-fluid layui-bg-black layui-header">
     <div class="layui-main">
-        <a class="logo" href="../index/index.html">
+        <a class="logo" href="index.html">
             <img src="../../assets/common/img/logo.png" alt="layui">
         </a>
         <!--未登录-->
-        <div class="layui-hide">
+        <div class="">
             <ul class="layui-nav layui-layout-right tr" style="right: 210px" lay-filter="">
                 <li class="layui-nav-item layui-this"><a href="index.html">首页</a></li>
                 <li class="layui-nav-item"><a href="">合作意向</a></li>
@@ -66,7 +130,7 @@
             </div>
         </div>
         <!--已登陆-->
-        <div class="">
+        <div class="layui-hide">
             <ul class="layui-nav layui-layout-right tr" style="right: 85px" lay-filter="">
                 <li class="layui-nav-item layui-this"><a href="">首页</a></li>
                 <li class="layui-nav-item"><a href="">合作意向</a></li>
@@ -145,9 +209,9 @@
                 <li>用电单元信息</li>
                 <li>用户登录信息</li>
             </ul>
-            <div class="layui-tab-content pt20 pl0 pr0" >
+            <div class="layui-tab-content" style="padding: 20px 0 0">
                 <div class="layui-form layui-form-pane layui-tab-item layui-show">
-                    <form action="" method="post" lay-filter="baseInfo">
+                    <!--<form class="layui-form" lay-filter="baseInfo">-->
                         <div class="layui-collapse">
                             <div class="layui-colla-item">
                                 <h2 class="layui-colla-title">公司信息</h2>
@@ -397,161 +461,162 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mt20 pb10">
-                            <button class="layui-btn fl" lay-submit lay-filter="baseInfo">立即提交</button>
-                        </div>
-                    </form>
+              <!--          <button class="layui-btn mt30" lay-submit="" lay-filter="baseInfo">立即提交</button>
+                    </form>-->
                 </div>
                 <div class="layui-form layui-form-pane layui-tab-item">
-                    <form action="" method="post" lay-filter="unitInfo">
-                        <div class="layui-collapse">
+                    <div class="layui-collapse">
                         <div class="layui-colla-item">
                             <h2 class="layui-colla-title">基本信息</h2>
                             <div class="layui-colla-content layui-show">
-                                <div class="layui-row layui-col-space30">
-                                    <div class="layui-col-xs6">
-                                        <!--行一-->
-                                        <div class="layui-form-item">
-                                            <label class="layui-form-label" title="用电单元名称">
-                                                <span class="layui-badge-dot layui-badge pa"></span>
-                                                用电单元名称</label>
-                                            <div class="layui-input-block">
-                                                <input lay-verify="required" type="text" class="layui-input" placeholder="请输入用电单元名称">
+                                <form class="layui-form" action="">
+                                    <div class="layui-row layui-col-space30">
+                                        <div class="layui-col-xs6">
+                                            <!--行一-->
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label" title="用电单元名称">用电单元名称</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input" placeholder="请输入用电单元名称">
+                                                </div>
+                                            </div>
+                                            <!--行二-->
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label" title="用电单元类型">用电单元类型</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input" placeholder="请选择用电单元类型">
+                                                </div>
+                                            </div>
+                                            <!--行三-->
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label" title="用电类别">用电类别</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input" placeholder="请选择用电类别">
+                                                </div>
                                             </div>
                                         </div>
-                                        <!--行二-->
-                                        <div class="layui-form-item">
-                                            <label class="layui-form-label" title="用电单元类型">用电单元类型</label>
-                                            <div class="layui-input-block">
-                                                <input type="text" class="layui-input" placeholder="请选择用电单元类型">
+                                        <div class="layui-col-xs6">
+                                            <!--行四-->
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label" title="营销用户编号">营销用户编号</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input" placeholder="请输入营销用户编号">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <!--行三-->
-                                        <div class="layui-form-item">
-                                            <label class="layui-form-label" title="用电类别">用电类别</label>
-                                            <div class="layui-input-block">
-                                                <input type="text" class="layui-input" placeholder="请选择用电类别">
+                                            <!--行五-->
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label" title="用电电压等级">用电电压等级</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input"
+                                                           placeholder="请选择用电电压等级（单位：KV）">
+                                                </div>
+                                            </div>
+                                            <!--行六-->
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label" title="用电地址">用电地址</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input" placeholder="请输入用电地址">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="layui-col-xs6">
-                                        <!--行四-->
-                                        <div class="layui-form-item">
-                                            <label class="layui-form-label" title="营销用户编号">营销用户编号</label>
-                                            <div class="layui-input-block">
-                                                <input type="text" class="layui-input" placeholder="请输入营销用户编号">
-                                            </div>
-                                        </div>
-                                        <!--行五-->
-                                        <div class="layui-form-item">
-                                            <label class="layui-form-label" title="用电电压等级">用电电压等级</label>
-                                            <div class="layui-input-block">
-                                                <input type="text" class="layui-input" placeholder="请选择用电电压等级（单位：KV）">
-                                            </div>
-                                        </div>
-                                        <!--行六-->
-                                        <div class="layui-form-item">
-                                            <label class="layui-form-label" title="用电地址">用电地址</label>
-                                            <div class="layui-input-block">
-                                                <input type="text" class="layui-input" placeholder="请输入用电地址">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                         <div class="layui-colla-item">
-                            <h2 class="layui-colla-title tl">参数信息</h2>
+                            <h2 class="layui-colla-title">参数信息</h2>
                             <div class="layui-colla-content layui-show">
-                                <div class="layui-row layui-col-space30">
-                                    <div class="layui-col-xs6">
-                                        <!--行一-->
-                                        <div class="layui-form-item">
-                                            <label class="layui-form-label" title="变压器容量">
-                                                <span class="layui-badge-dot layui-badge pa"></span>
-                                                变压器容量
-                                            </label>
-                                            <div class="layui-input-block">
-                                                <input type="text" class="layui-input" placeholder="请输入变压器容量（必填）">
+                                <form class="layui-form" action="">
+                                    <div class="layui-row layui-col-space30">
+                                        <div class="layui-col-xs6">
+                                            <!--行一-->
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label" title="变压器容量">
+                                                    <span class="layui-badge-dot layui-badge pa"></span>
+                                                    变压器容量
+                                                </label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input" placeholder="请输入变压器容量（必填）">
+                                                </div>
+                                            </div>
+                                            <!--行二-->
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label" title="电价行业类别">电价行业类别</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input" placeholder="请选择电价行业类别">
+                                                </div>
+                                            </div>
+                                            <!--行三-->
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label" title="电价编码">电价编码</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input" placeholder="请输入电价编码">
+                                                </div>
+                                            </div>
+                                            <!--行四-->
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label" title="目录电价">目录电价</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input"
+                                                           placeholder="请输入目录电价（单价：元/MWH）">
+                                                </div>
                                             </div>
                                         </div>
-                                        <!--行二-->
-                                        <div class="layui-form-item">
-                                            <label class="layui-form-label" title="电价行业类别">电价行业类别</label>
-                                            <div class="layui-input-block">
-                                                <input type="text" class="layui-input" placeholder="请选择电价行业类别">
+                                        <div class="layui-col-xs6">
+                                            <!--行五-->
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label" title="是否执行峰谷标志">是否执行峰谷标志</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input" placeholder="是否执行峰谷标志">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <!--行三-->
-                                        <div class="layui-form-item">
-                                            <label class="layui-form-label" title="电价编码">电价编码</label>
-                                            <div class="layui-input-block">
-                                                <input type="text" class="layui-input" placeholder="请输入电价编码">
+                                            <!--行六-->
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label" title="是否参与功率因数考核">是否参与功率因数考核</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input" placeholder="是否参与功率因数考核">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <!--行四-->
-                                        <div class="layui-form-item">
-                                            <label class="layui-form-label" title="目录电价">目录电价</label>
-                                            <div class="layui-input-block">
-                                                <input type="text" class="layui-input" placeholder="请输入目录电价（单价：元/MWH）">
+                                            <!--行七-->
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label" title="政府基金及附加">政府基金及附加</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" class="layui-input"
+                                                           placeholder="政府基金及附加（单价：元/MVA）">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="layui-col-xs6">
-                                        <!--行五-->
-                                        <div class="layui-form-item">
-                                            <label class="layui-form-label" title="是否执行峰谷标志">是否执行峰谷标志</label>
-                                            <div class="layui-input-block">
-                                                <input type="text" class="layui-input" placeholder="是否执行峰谷标志">
-                                            </div>
-                                        </div>
-                                        <!--行六-->
-                                        <div class="layui-form-item">
-                                            <label class="layui-form-label" title="是否参与功率因数考核">是否参与功率因数考核</label>
-                                            <div class="layui-input-block">
-                                                <input type="text" class="layui-input" placeholder="是否参与功率因数考核">
-                                            </div>
-                                        </div>
-                                        <!--行七-->
-                                        <div class="layui-form-item">
-                                            <label class="layui-form-label" title="政府基金及附加">政府基金及附加</label>
-                                            <div class="layui-input-block">
-                                                <input type="text" class="layui-input" placeholder="政府基金及附加（单价：元/MVA）">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                        <div class="mt20 pb10">
-                            <button class="layui-btn fl" lay-submit lay-filter="unitInfo">立即提交</button>
-                        </div>
-                    </form>
                 </div>
                 <div class="layui-form layui-form-pane layui-tab-item">
-                    <form action="" method="post">
+                    <form action="/user/repass" method="post">
                         <div class="layui-row layui-col-space30">
                             <div class="layui-col-xs6">
                                 <!--输入旧密码-->
                                 <div class="layui-form-item">
                                     <label for="L_nowpass" class="layui-form-label">当前密码</label>
                                     <div class="layui-input-inline">
-                                        <input type="password" id="L_nowpass" name="nowpass" required lay-verify="required" autocomplete="off" class="layui-input">
+                                        <input type="password" id="L_nowpass" name="nowpass" required
+                                               lay-verify="required" autocomplete="off" class="layui-input">
                                     </div>
                                 </div>
                                 <!--输入新密码-->
                                 <div class="layui-form-item">
                                     <label for="L_pass" class="layui-form-label">新密码</label>
                                     <div class="layui-input-inline">
-                                        <input type="password" id="L_pass" name="pass" required lay-verify="required" autocomplete="off" class="layui-input">
+                                        <input type="password" id="L_pass" name="pass" required lay-verify="required"
+                                               autocomplete="off" class="layui-input">
                                     </div>
                                 </div>
                                 <!--确认新密码-->
                                 <div class="layui-form-item">
                                     <label for="L_repass" class="layui-form-label">确认密码</label>
                                     <div class="layui-input-inline">
-                                        <input type="password" id="L_repass" name="repass" required lay-verify="required" autocomplete="off" class="layui-input">
+                                        <input type="password" id="L_repass" name="repass" required
+                                               lay-verify="required" autocomplete="off" class="layui-input">
                                     </div>
                                 </div>
                             </div>
@@ -560,7 +625,8 @@
                                 <div class="layui-upload">
                                     <button type="button" class="layui-btn" id="test1">上传头像</button>
                                     <div class="layui-upload-list">
-                                        <img class="layui-upload-img circle w100 h100" id="demo1" src="../../assets/common/img/avatars/kh.jpg">
+                                        <img class="layui-upload-img circle w100 h100" id="demo1"
+                                             src="../../assets/common/img/avatars/kh.jpg">
                                         <p id="demoText"></p>
                                     </div>
                                 </div>
@@ -582,13 +648,17 @@
     <div class="layui-main pt50 pb50">
         <div class="layui-row layui-col-space30 lgray">
             <div class="layui-col-xs6">
-                <blockquote class="layui-elem-quote lh0 mb20 white f20 bg_none">关于我们<a href="about.html" class="fr lgray">了解详情</a></blockquote>
+                <blockquote class="layui-elem-quote lh0 mb20 white f20 bg_none">关于我们<a href="about.html"
+                                                                                       class="fr lgray">了解详情</a>
+                </blockquote>
                 <p class=" lh200">
                     <span class="fa fa-phone mr5 white" title="电话号码"></span><span class="mr10" title="电话号码">0791-83953621</span>
-                    <span class="fa fa-send ml10 mr5 white" title="企业邮箱"></span><span title="企业邮箱">3151511@spic.com</span>
+                    <span class="fa fa-send ml10 mr5 white" title="企业邮箱"></span><span
+                        title="企业邮箱">3151511@spic.com</span>
                 </p>
                 <p class=" lh200">
-                    <span class="fa fa-fax mr5 white" title="传真号码"></span><span class="mr10" title="传真号码">0791-83953621</span>
+                    <span class="fa fa-fax mr5 white" title="传真号码"></span><span class="mr10"
+                                                                                title="传真号码">0791-83953621</span>
                     <span class="fa fa-map-marker ml10 mr5 white" title="企业地址"></span><span title="企业地址">江西省南昌市青山湖区艾溪湖北路66号</span>
                 </p>
                 <p class="f14 lh200">创新创造是我们的特质。国家电投倡导全面创新创造，将创新融入技术、产品、制度、组织、文化、观念等方方面面；倡导全员创新创造，使创新创造成为国家电投人的品格。
@@ -596,20 +666,34 @@
                 <div class="mt30">
                     <blockquote class="layui-elem-quote lh0 mb20 white f20 bg_none">我们团队</blockquote>
                     <ul class="group_list_xs">
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group1-xs.jpg"></a></li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group1-xs.jpg"></a>
+                        </li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
+                        </li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
+                        </li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
+                        </li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
+                        </li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
+                        </li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
+                        </li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
+                        </li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
+                        </li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
+                        </li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
+                        </li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
+                        </li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
+                        </li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
+                        </li>
                     </ul>
                 </div>
             </div>
