@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>智慧售电营业厅登录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../../assets/common/layui/css/layui.css">
+    <link rel="stylesheet" href="../../assets/common/css/base.css">
+</head>
+<body>
+<div >
+    <form class="layui-form auto_ctr pt30" style="display: table" action="">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">剩余用电量</label>
+            <div class="layui-input-inline">
+                <input type="number" name="surplus" value="38898" readonly class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">kwh</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">修改年月</label>
+            <div class="layui-input-inline">
+                <input type="text" id="date" placeholder="点击选择修改年月" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">合同用电量</label>
+            <div class="layui-input-inline">
+                <input type="number" name="surplus" placeholder="请输入合同管用电量" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">kwh</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">上传确认函</label>
+            <div class="layui-input-inline">
+                <input id="upload" type="text" name="upload" placeholder="点击上传文件" readonly style="cursor: pointer" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">jpg、jpeg、png、gif</div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">修改原因</label>
+            <div class="layui-input-inline">
+                <textarea name="desc" placeholder="请简要输入修改原因" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item mt30">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="../../assets/common/js/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/common/layui/layui.js" type="text/javascript"></script>
+
+<script>
+
+    layui.use(['form','laydate','upload','layer'],function () {
+        var form = layui.form,
+            laydate = layui.laydate,
+            layer = layui.layer,
+            upload = layui.upload;
+        //年月选择器
+        laydate.render({
+            elem: '#date'
+            ,type: 'month'
+        });
+
+        upload.render({
+            url: 'mockUploadResponseData.json'
+            ,elem: '#upload'  //指定原始元素，默认直接查找class="layui-upload-file"
+            //,method: 'get' //上传接口的http类型,默认为post
+            //,accept: 'file' //允许上传的文件类型，如果 accept 未设定，那么限制的就是图片的文件格式
+            //,size: 50 //最大允许上传的文件大小
+            ,done: function(res, index, upload){
+                if(res.code == 200){
+                    $('#upload').val(res.data.src);
+                    layer.msg(res.data.src+'上传成功');
+                }
+                console.log(res);
+            }
+            ,error: function(res){
+                console.log(res);
+            }
+            ,success: function(res){
+                console.log(res);
+            }
+        });
+        /*所有表单符合要求了提交函数*/
+        form.on('submit(login_index)', function (data) {
+            loading = layer.load(2, {
+                shade: [0.2, '#000']
+            });
+            var param = data.field;
+            jq.post('/login/index.html', param, function (data) {
+                if (data.code == 200) {
+                    layer.close(loading);
+                    layer.msg(data.msg, {icon: 1, time: 1000}, function () {
+                        window.parent.location.href = '../index/index.html'
+                    });
+                } else {
+                    layer.close(loading);
+                    layer.msg(data.msg, {icon: 2, anim: 6, time: 1000});
+                }
+            });
+            return false;
+        });
+    })
+</script>
+</body>
+</html>

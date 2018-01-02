@@ -38,17 +38,17 @@
                    lay-verify="phonecode" autocomplete="off" class="layui-input w200 fl mr10">
             <button lay-filter="phonecodebtn" class="w150 layui-btn layui-btn-primary layui-btn-disabled" disabled type="button">获取验证码</button>
         </div>
-        <div class="layui-form-item" style="margin-bottom: 16px">
+        <div class="layui-form-item pt10" style="margin-bottom: 16px">
             <button id="submitBtn" class="layui-btn w" lay-submit="" lay-filter="reg_index">
                 立即注册
             </button>
         </div>
     </form>
-    <hr class="layui-bg-gray">
+<!--    <hr class="layui-bg-gray">
     <div>
         <a href="../index/index.html" class="f14">返回首页</a>
         <a href="login.html" class="f14 fr">已有账号，返回登录</a>
-    </div>
+    </div>-->
 
 </div>
 
@@ -62,21 +62,13 @@
             util = layui.util,
             $ = layui.jquery;
 
-        /*定义安全验证码验证规则*/
-        form.verify({
-            phonenum: function (value, item) { //value：表单的值、item：表单的DOM对象
-                var reg = /^1[3|4|5|7|8][0-9]{9}$/;
-                if(reg.test(value)){
-                    $('[lay-filter="phonecodebtn"]').prop('disabled',false).removeClass('layui-btn-disabled');
-                }
-            },
-        });
+
 
         /*手机号码输入框值变化监听*/
         $('[lay-filter="phoneinput"]').on('change', function(){
             var reg = /^1[3|4|5|7|8][0-9]{9}$/;
             var $phone_code_btn = $('.layui-form').find('[lay-filter="phonecodebtn"]');
-            var value = $(this).val();
+            var value = $(this).val().replace(/\s/g,"");
             if(reg.test(value)){
                 $phone_code_btn.prop('disabled',false).removeClass('layui-btn-disabled');
             }else{
@@ -84,18 +76,38 @@
             }
         });
 
-        /*点击发送验证码事件*/
-        $('[lay-filter="phonecodebtn"]').on('click', function(){
-            var ele = this
-            //示例
-            var endTime = new Date().setSeconds( 0 ), //假设为结束日期
-                serverTime = new Date().getTime(); //假设为当前服务器时间，这里采用的是本地时间，实际使用一般是取服务端的
-
-            util.countdown(endTime, serverTime, function(date, serverTime, timer){
-                var str = date[3] + '秒';
-                layui.$(ele).html('倒计时'+ str);
+        !function () {
+            /*定义计时器的起止时间*/
+            var serverTime = new Date();
+            var end_year = serverTime.getFullYear(),
+                end_month = serverTime.getMonth(),
+                end_day = serverTime.getDate(),
+                end_hour = serverTime.getHours(),
+                end_min = serverTime.getMinutes(),
+                end_sec = serverTime.getSeconds()+60;
+            var endTime = new Date(end_year, end_month||0, end_day||1, end_hour||0, end_min||0, end_sec||0);
+            /*获取按钮*/
+            var $phoneCodeBtn =  $('[lay-filter="phonecodebtn"]');
+            /*使用lay组件中计时器*/
+            var thisTimer, setCountdown = function(y, M, d, H, m, s){
+                clearTimeout(thisTimer);
+                util.countdown(endTime, serverTime, function(date, serverTime, timer){
+                // var str = date[0] + '天' + date[1] + '时' +  date[2] + '分' + date[3] + '秒';
+                    if(date[3]){
+                        var str = date[3] + '秒' + '后重新获取';
+                        $phoneCodeBtn.html(str);
+                        thisTimer = timer;
+                    }else{
+                        $phoneCodeBtn.html('获取验证码');
+                    }
+                });
+            };
+            /*点击获取验证码事件*/
+            $phoneCodeBtn.on('click', function(){
+                setCountdown(end_year, end_month , end_day, end_hour, end_min, end_sec);
             });
-        });
+
+        }();
 
         /*所有表单符合要求了提交函数*/
         form.on('submit(reg_index)', function (data) {

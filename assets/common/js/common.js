@@ -1,73 +1,69 @@
 /**
  各个页面共用的common模块
  **/
-layui.define(['layer','util'], function(exports){
+
+
+function openwindow(url, name, iWidth, iHeight) {
+    // url 转向网页的地址
+    // name 网页名称，可为空
+    // iWidth 弹出窗口的宽度
+    // iHeight 弹出窗口的高度
+    //window.screen.height获得屏幕的高，window.screen.width获得屏幕的宽
+    var iTop = (window.screen.height - 30 - iHeight) / 2; //获得窗口的垂直位置;
+    var iLeft = (window.screen.width - 10 - iWidth) / 2; //获得窗口的水平位置;
+    window.open(url, name, 'height=' + iHeight + ',,innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',toolbar=no,menubar=no,scrollbars=auto,resizeable=no,location=no,status=no');
+}
+
+function openLayer(title, url, w, h) {
+    if (title == null || title == '') {title = false;};
+    if (url == null || url == '') {url = "../error/404.html";};
+    if (w == null || w == '') {w = 800;};
+    if (h == null || h == '') {h = ($(window).height() - 50);};
+    layer.open({
+        type: 2,
+        area: [w + 'px', h + 'px'],
+        fix: false, //不固定
+        maxmin: true,
+        shade: 0.4,
+        skin: 'layui-layer-molv',
+        title: title,
+        content: url
+    });
+}
+
+layui.define(['layer', 'util'], function (exports) {
     var layer = layui.layer,
         util = layui.util;
-    function openwindow(url,name,iWidth,iHeight){
-        // url 转向网页的地址
-        // name 网页名称，可为空
-        // iWidth 弹出窗口的宽度
-        // iHeight 弹出窗口的高度
-        //window.screen.height获得屏幕的高，window.screen.width获得屏幕的宽
-        var iTop = (window.screen.height-30-iHeight)/2; //获得窗口的垂直位置;
-        var iLeft = (window.screen.width-10-iWidth)/2; //获得窗口的水平位置;
-        window.open(url,name,'height='+iHeight+',,innerHeight='+iHeight+',width='+iWidth+',innerWidth='+iWidth+',top='+iTop+',left='+iLeft+',toolbar=no,menubar=no,scrollbars=auto,resizeable=no,location=no,status=no');
-    };
 
-    $('#login').on('click',function () {
-        layer.open({
-            type: 2,
-            title: '用户登录',
-            shadeClose: true,
-            shade: 0.5,
-            area : ['440px' , '420px'],
-            skin: 'layui-layer-molv',
-            content: '../login/login_iframe.html' //iframe的url
-        });
+    $('#login').on('click', function () {
+        openLayer('用户登录', '../login/login_iframe.html', '440', '420');
     });
 
-    $('#reg').on('click',function () {
-        layer.open({
-            type: 2,
-            title: '用户注册',
-            shadeClose: true,
-            shade: 0.5,
-            area : ['440px' , '480px'],
-            skin: 'layui-layer-molv',
-            content: '../login/reg_iframe.html' //iframe的url
-        });
+    $('#reg').on('click', function () {
+        openLayer('用户注册', '../login/reg_iframe.html', '440', '420');
     });
 
-    $('#admin').on('click',function () {
-        layer.open({
-            type: 2,
-            title: '用户注册',
-            shadeClose: true,
-            shade: 0.5,
-            area : ['440px' , '480px'],
-            skin: 'layui-layer-molv',
-            content: '../login/reg_iframe.html' //iframe的url
-        });
+    $('#admin').on('click', function () {
+        openLayer('管理员登录', '../login/login_admin_iframe.html', '440', '420');
     });
 
     /*在线客服按钮点击事件*/
-    $('#onlineChatBtn').on('click',function () {
-        openwindow('http://p.qiao.baidu.com/cps/chat?siteId=11555035&userId=22742801','', '585','540')
+    $('#onlineChatBtn').on('click', function () {
+        openwindow('http://p.qiao.baidu.com/cps/chat?siteId=11555035&userId=22742801', '', '585', '540')
     });
 
     /*固定右下角工具*/
     util.fixbar({
         bar1: true
-        ,bar2: true
-        ,css: {right: 50, bottom: 100}
-        ,bgcolor: '#393D49'
-        ,click: function(type){
-            if(type === 'bar1'){
-                openwindow('http://p.qiao.baidu.com/cps/chat?siteId=11555035&userId=22742801','', '585','540')
-            } else if(type === 'bar2') {
+        , bar2: true
+        , css: {right: 50, bottom: 100}
+        , bgcolor: '#393D49'
+        , click: function (type) {
+            if (type === 'bar1') {
+                openwindow('http://p.qiao.baidu.com/cps/chat?siteId=11555035&userId=22742801', '', '585', '540')
+            } else if (type === 'bar2') {
                 window.open('../help/help_hall.html')
-            }else if(type === 'top'){
+            } else if (type === 'top') {
                 $('html,body').animate({
                     'scrollTop': 0
                 }, 500);
@@ -76,7 +72,7 @@ layui.define(['layer','util'], function(exports){
     });
 
     /*百度地图*/
-    !function(){
+    !function () {
         var points = [{
             id: 1,
             lng: 115.980489,
@@ -111,5 +107,6 @@ layui.define(['layer','util'], function(exports){
         });
         var data = map.getPosition();
     }();
+
     exports('common'); //注意，这里是模块输出的核心，模块名必须和use时的模块名一致
 });

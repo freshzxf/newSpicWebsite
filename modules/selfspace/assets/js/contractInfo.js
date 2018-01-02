@@ -1,5 +1,5 @@
 /**
- news入口
+ 合同信息页面
  **/
 layui.define(['layer','element','table'], function(exports){
     var layer = layui.layer,
@@ -48,7 +48,8 @@ layui.define(['layer','element','table'], function(exports){
     table.on('tool(retailTable)', function(obj){
         var data = obj.data;
         if(obj.event === 'preview'){
-            layer.msg('预览操作retailTable');
+            openLayer('零售电合同详情','contract_three_detail_iframe.html','986','622')
+            /*layer.msg('预览操作retailTable');*/
         }else if(obj.event === 'download'){
             layer.alert('下载文件：<br>'+ JSON.stringify(data))
         }
@@ -96,7 +97,8 @@ layui.define(['layer','element','table'], function(exports){
     table.on('tool(purchaseSaleTable)', function(obj){
         var data = obj.data;
         if(obj.event === 'preview'){
-            layer.msg('预览操作purchaseSaleTable');
+            openLayer('购售电合同详情','contract_detail_iframe.html','986','622')
+           // layer.msg('预览操作purchaseSaleTable');
         }else if(obj.event === 'download'){
             layer.alert('下载文件：<br>'+ JSON.stringify(data))
         }
