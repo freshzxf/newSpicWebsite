@@ -31,8 +31,9 @@ function openLayer(title, url, w, h) {
     });
 }
 
-layui.define(['layer', 'util'], function (exports) {
+layui.define(['layer', 'util','element'], function (exports) {
     var layer = layui.layer,
+        element = layui.element,
         util = layui.util;
 
     $('#login').on('click', function () {

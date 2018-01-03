@@ -41,13 +41,13 @@
 <!--顶部导航-->
 <div class="layui-fluid layui-bg-black layui-header">
     <div class="layui-main">
-        <a class="logo" href="index.html">
+        <a class="logo" href="../index/index.html">
             <img src="../../assets/common/img/logo.png" alt="layui">
         </a>
         <!--未登录-->
-        <div class="">
+        <div class="layui-hide">
             <ul class="layui-nav layui-layout-right tr" style="right: 210px" lay-filter="">
-                <li class="layui-nav-item layui-this"><a href="index.html">首页</a></li>
+                <li class="layui-nav-item layui-this"><a href="../index/index.html">首页</a></li>
                 <li class="layui-nav-item"><a href="../intorduce/intorduce.html">合作意向</a></li>
                 <li class="layui-nav-item">
                     <a href="../news/news.html">政策行业动态</a>
@@ -66,9 +66,9 @@
             </div>
         </div>
         <!--已登陆-->
-        <div class="layui-hide">
+        <div class="">
             <ul class="layui-nav layui-layout-right tr" style="right: 85px" lay-filter="">
-                <li class="layui-nav-item layui-this"><a href="index.html">首页</a></li>
+                <li class="layui-nav-item "><a href="../index/index.html">首页</a></li>
                 <li class="layui-nav-item"><a href="../intorduce/intorduce.html">合作意向</a></li>
                 <li class="layui-nav-item">
                     <a href="../news/news.html">政策行业动态</a>
@@ -79,12 +79,12 @@
                 </li>
                 <li class="layui-nav-item"><a href="../files/files_center.html">资料下载</a></li>
                 <li class="layui-nav-item"><a href="../about/about.html">关于我们</a></li>
-                <li class="layui-nav-item">
+                <li class="layui-nav-item layui-this">
                     <a href="../selfspace/base_info.html"><img src="../../assets/common/img/avatars/avatar0.jpg"
                                                                class="layui-nav-img">江铜集团</a>
                     <dl class="layui-nav-child tc">
                         <dd><a href="../selfspace/base_info.html">客户中心</a></dd>
-                        <dd><a href="javascript:;">安全退出</a></dd>
+                        <dd><a href="../index/index.html">安全退出</a></dd>
                     </dl>
                 </li>
             </ul>
@@ -116,6 +116,9 @@
     <ul class="layui-nav layui-nav-tree">
         <li class="layui-nav-item layui-this">
             <a href="base_info.html"><i class="layui-icon">&#xe612;</i>基本信息</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="power_view.html"><i class="layui-icon">&#xe62c;</i>用电查询</a>
         </li>
         <li class="layui-nav-item ">
             <a href="charge_report.html"><i class="layui-icon">&#xe681;</i>负荷上报</a>
@@ -557,10 +560,10 @@
                             <div class="layui-col-xs6">
                                 <!--上传头像-->
                                 <div class="layui-upload">
-                                    <button type="button" class="layui-btn" id="test1">上传头像</button>
+                                    <button id="upload" type="button" class="layui-btn">上传头像</button>
                                     <div class="layui-upload-list">
-                                        <img class="layui-upload-img circle w100 h100" id="demo1" src="../../assets/common/img/avatars/kh.jpg">
-                                        <p id="demoText"></p>
+                                        <img id="avatar" class="layui-upload-img circle w100 h100" src="../../assets/common/img/avatars/kh.jpg">
+                                        <p id="uploadText"></p>
                                     </div>
                                 </div>
                             </div>

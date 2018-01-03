@@ -144,7 +144,7 @@
 
 <script>
 
-    layui.use(['form','laydate','upload','layer'],function () {
+    layui.use(['form','laydate','layer'],function () {
         var form = layui.form,
             laydate = layui.laydate,
             layer = layui.layer,
@@ -155,26 +155,6 @@
             ,type: 'month'
         });
 
-        upload.render({
-            url: 'mockUploadResponseData.json'
-            ,elem: '#upload'  //指定原始元素，默认直接查找class="layui-upload-file"
-            //,method: 'get' //上传接口的http类型,默认为post
-            //,accept: 'file' //允许上传的文件类型，如果 accept 未设定，那么限制的就是图片的文件格式
-            //,size: 50 //最大允许上传的文件大小
-            ,done: function(res, index, upload){
-                if(res.code == 200){
-                    $('#upload').val(res.data.src);
-                    layer.msg(res.data.src+'上传成功');
-                }
-                console.log(res);
-            }
-            ,error: function(res){
-                console.log(res);
-            }
-            ,success: function(res){
-                console.log(res);
-            }
-        });
         /*所有表单符合要求了提交函数*/
         form.on('submit(login_index)', function (data) {
             loading = layer.load(2, {

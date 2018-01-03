@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="../../assets/common/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../assets/common/css/base.css">
 </head>
-<body>
+<body ><!--style="background-color:#2F4056!important;"-->
 <div class="pa_cor w360">
     <h2 class="tc mb20">
         <a href="javascript:;">
             <img src="../../assets/common/img/logo-xs.png" alt="" class="w40 h40" style="vertical-align: -7px" title="点击返回首页">
             <span class="f30 f300 black" title="点击返回首页">SPIC能源销售</span>
+            <!--<img src="../../assets/common/img/logo.png" alt="" class="w" style="vertical-align: -7px" title="点击返回首页">-->
         </a>
         <div class="mt10 gray">国家电投江西能源销售有限公司</div>
     </h2>
@@ -73,11 +74,12 @@
                 shade: [0.2, '#000']
             });
             var param = data.field;
-            $.post('/login/index.html', param, function (data) {
+            $.post('login.json', param, function (data) {
+                // if (data.code == 200) {
                 if (data.code == 200) {
                     layer.close(loading);
                     layer.msg(data.msg, {icon: 1, time: 1000}, function () {
-                        window.parent.location.href = '../index/index.html'
+                        window.parent.location.href = '../selfspace/base_info.html'
                     });
                 } else {
                     layer.close(loading);

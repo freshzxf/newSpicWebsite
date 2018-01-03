@@ -35,6 +35,12 @@
     .layui-badge-dot.layui-badge.pa{left: 8px;top: 14px}
 
     .layui-form-item .layui-input-inline{width: 180px;}
+    /*表格行高*/
+    .layui-table-cell {
+      height: 32px;
+      line-height: 32px;
+    }
+
 
   </style>
 </head>
@@ -118,6 +124,9 @@
     <li class="layui-nav-item ">
       <a href="base_info.html"><i class="layui-icon">&#xe612;</i>基本信息</a>
     </li>
+    <li class="layui-nav-item">
+      <a href="power_view.html"><i class="layui-icon">&#xe62c;</i>用电查询</a>
+    </li>
     <li class="layui-nav-item ">
       <a href="charge_report.html"><i class="layui-icon">&#xe681;</i>负荷上报</a>
     </li>
@@ -139,64 +148,86 @@
   </ul>
 
   <div class="fly-panel fly-panel-user bg_fff" pad20>
-      <form class="layui-form layui-form-pane mt30 mb30" action="">
-        <!---->
-        <div class="layui-form-item">
-          <label class="layui-form-label">咨询标题</label>
-          <div class="layui-input-block">
-            <input type="text" name="title" placeholder="请输入咨询标题" autocomplete="off" class="layui-input">
-          </div>
-        </div>
-        <!---->
-        <div class="layui-form-item">
-          <div class="layui-inline">
-            <label class="layui-form-label">
-              <span class="layui-badge-dot layui-badge pa"></span>
-              咨询人</label>
-            <div class="layui-input-inline">
-              <input type="text" name="username" lay-verify="required" placeholder="请输入您的姓名" autocomplete="off" class="layui-input">
-            </div>
-          </div>
-        </div>
-        <!---->
-        <div class="layui-form-item">
-          <div class="layui-inline">
-            <label class="layui-form-label">
-              <span class="layui-badge-dot layui-badge pa"></span>
-              联系号码</label>
-            <div class="layui-input-inline">
-              <input type="text" name="phone" lay-verify="phone" placeholder="请输入您的手机号" autocomplete="off" class="layui-input">
-            </div>
-          </div>
-        </div>
-        <!---->
-        <div class="layui-form-item">
-          <div class="layui-inline">
-            <label class="layui-form-label">传真号码</label>
-            <div class="layui-input-inline">
-              <input type="text" name="fax" placeholder="请输入传真号码" autocomplete="off" class="layui-input">
-            </div>
-          </div>
-        </div>
 
-        <div class="layui-form-item layui-form-text">
-          <label class="layui-form-label">咨询内容</label>
-          <div class="layui-input-block">
-            <textarea placeholder="在此输入您的咨询内容，我们会尽快给您回复... ..." class="layui-textarea"></textarea>
+    <div class="layui-tab layui-tab-brief">
+      <ul class="layui-tab-title">
+        <li class="layui-this">业务咨询</li>
+        <li>历史咨询</li>
+      </ul>
+      <div class="layui-tab-content pt20 pl0 pr0">
+        <div class="layui-form layui-form-pane layui-tab-item layui-show">
+          <form class="layui-form layui-form-pane mt30 mb30" action="">
+            <!---->
+            <div class="layui-form-item">
+              <label class="layui-form-label">咨询标题</label>
+              <div class="layui-input-block">
+                <input type="text" name="title" placeholder="请输入咨询标题" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+            <!---->
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label class="layui-form-label">
+                  <span class="layui-badge-dot layui-badge pa"></span>
+                  咨询人</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="username" lay-verify="required" placeholder="请输入您的姓名" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+            </div>
+            <!---->
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label class="layui-form-label">
+                  <span class="layui-badge-dot layui-badge pa"></span>
+                  联系号码</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="phone" lay-verify="phone" placeholder="请输入您的手机号" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+            </div>
+            <!---->
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label class="layui-form-label">传真号码</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="fax" placeholder="请输入传真号码" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+            </div>
+
+            <div class="layui-form-item layui-form-text">
+              <label class="layui-form-label">咨询内容</label>
+              <div class="layui-input-block">
+                <textarea placeholder="在此输入您的咨询内容，我们会尽快给您回复... ..." class="layui-textarea"></textarea>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-input-block ml0">
+                <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                <button type="button" class="layui-btn layui-btn-normal">保存草稿</button>
+                <button type="reset" class="layui-btn layui-btn-primary fr">重置表单</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="layui-form layui-form-pane layui-tab-item">
+          <!--历史结算上报单-->
+          <div class="mt30 mb30">
+            <table id="historyConsult" lay-filter="historyConsult"></table>
           </div>
         </div>
-        <div class="layui-form-item">
-          <div class="layui-input-block ml0">
-            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
-            <button type="button" class="layui-btn layui-btn-normal">保存草稿</button>
-            <button type="reset" class="layui-btn layui-btn-primary fr">重置表单</button>
-          </div>
-        </div>
-      </form>
+      </div>
+    </div>
+
     </div>
 </div>
 </div>
-
+<!--零售电表格操作模板-->
+<script type="text/html" id="toolBtnsHistory">
+  <a class="layui-btn layui-btn-primary layui-btn-sm" lay-event="preview">预览</a>
+  <a class="layui-btn layui-btn-sm" lay-event="download">下载</a>
+</script>
 <!--页脚-->
 <div class="layui-bg-cyan">
   <div class="layui-main pt50 pb50">

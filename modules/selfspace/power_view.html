@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,86 +14,24 @@
     <style>
 
         #notice{max-width:1000px;overflow:hidden;}
-        #notice ul li{float:left;margin:0 10px}
+        #notice ul li{float:left;margin:0 10px}*
 
-        .fly-panel {
-            margin-bottom: 15px;
-            border-radius: 2px;
-            background-color: #fff;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05);
-        }
-
-        .fly-panel[pad20] {
-            padding: 20px;
-        }
-
-        .fly-panel-title {
-            position: relative;
-            height: 50px;
-            line-height: 50px;
-            padding: 0 15px;
-            border-bottom: 1px dotted #E9E9E9;
-            color: #333;
-            border-radius: 2px 2px 0 0;
-            font-size: 14px;
-        }
-
-        .fly-panel-main {
-            padding: 10px 15px;
-        }
-
-        .fly-panel-border {
-            border: 1px solid #e6e6e6;
-            box-shadow: none;
-        }
-
-        .fly-panel-border .fly-panel-title {
-            border-bottom: 1px solid #e6e6e6;
-        }
+                                               .fly-panel{margin-bottom: 15px;border-radius: 2px;background-color: #fff;box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);}
+        .fly-panel[pad20]{padding: 20px;}
+        .fly-panel-title{position: relative; height: 50px; line-height: 50px; padding: 0 15px; border-bottom: 1px dotted #E9E9E9; color: #333; border-radius: 2px 2px 0 0; font-size: 14px;}
+        .fly-panel-main{padding: 10px 15px;}
+        .fly-panel-border{border: 1px solid #e6e6e6; box-shadow: none;}
+        .fly-panel-border .fly-panel-title{border-bottom: 1px solid #e6e6e6;}
 
         /* 用户中心 */
-        body .fly-user-main {
-            position: relative;
-            min-height: 600px;
-        }
+        body .fly-user-main{position: relative; min-height: 600px;}
+        .fly-user-main>.layui-nav{position: absolute; left: 0; top: 0; z-index: 1000; height: 100%; padding: 10px 0;}
+        .fly-user-main>.layui-nav .layui-icon{position: relative; top: 2px; font-size: 20px; margin-right: 10px;}
+        .fly-user-main>.fly-panel{min-height: 575px; margin: 0 0 10px 215px;}
+        .fly-user-main .fly-none{min-height: 0;}
+        .fly-panel-user[pad20]{padding-top: 5px;}
 
-        .fly-user-main > .layui-nav {
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: 1000;
-            height: 100%;
-            padding: 10px 0;
-        }
-
-        .fly-user-main > .layui-nav .layui-icon {
-            position: relative;
-            top: 2px;
-            font-size: 20px;
-            margin-right: 10px;
-        }
-
-        .fly-user-main > .fly-panel {
-            min-height: 575px;
-            margin: 0 0 10px 215px;
-        }
-
-        .fly-user-main .fly-none {
-            min-height: 0;
-        }
-
-        .fly-panel-user[pad20] {
-            padding-top: 5px;
-        }
-
-        /*必填项标识*/
-        .layui-badge-dot.layui-badge.pa {
-            left: 8px;
-            top: 14px
-        }
-
-        /*表格行高*/
-        .layui-table-cell {
+        .layui-table-cell{
             height: 32px;
             line-height: 32px;
         }
@@ -179,7 +118,7 @@
         <li class="layui-nav-item ">
             <a href="base_info.html"><i class="layui-icon">&#xe612;</i>基本信息</a>
         </li>
-        <li class="layui-nav-item">
+        <li class="layui-nav-item layui-this">
             <a href="power_view.html"><i class="layui-icon">&#xe62c;</i>用电查询</a>
         </li>
         <li class="layui-nav-item ">
@@ -188,44 +127,50 @@
         <li class="layui-nav-item ">
             <a href="contract_info.html"><i class="layui-icon">&#xe600;</i>合同信息</a>
         </li>
-        <li class="layui-nav-item">
+        <li class="layui-nav-item ">
             <a href="ready_purchase.html"><i class="layui-icon">&#xe63c;</i>意向购电</a>
         </li>
-        <li class="layui-nav-item">
+        <li class="layui-nav-item ">
             <a href="settlement_report.html"><i class="layui-icon">&#xe62f;</i>结算上报</a>
         </li>
-        <li class="layui-nav-item">
+        <li class="layui-nav-item ">
             <a href="business_consulting.html"><i class="layui-icon">&#xe606;</i>业务咨询</a>
         </li>
-        <li class="layui-nav-item layui-this">
+        <li class="layui-nav-item ">
             <a href="trade_notice.html"><i class="layui-icon">&#xe645;</i>交易公告</a>
         </li>
     </ul>
     <div class="fly-panel fly-panel-user bg_fff" pad20>
-        <!--交易公告-->
-        <div class="mt30 mb30">
-            <table id="tradeNotice" lay-filter="tradeNotice"></table>
+        <div class="demoTable mt30">
+            年月查询：
+            <div class="layui-inline">
+                <input class="layui-input" name="date" id="date" autocomplete="off" readonly style="cursor: pointer">
+            </div>
+            <button class="layui-btn" data-type="reload">查询</button>
         </div>
+        <table id="powerView" lay-filter="powerView"></table>
     </div>
 
 </div>
+
+
+<script type="text/html" id="toolBtns">
+    <a class="layui-btn layui-btn-primary layui-btn-sm" lay-event="preview">查看详情</a>
+    <!--<a class="layui-btn layui-btn-sm" lay-event="download">下载</a>-->
+</script>
 
 <!--页脚-->
 <div class="layui-bg-cyan">
     <div class="layui-main pt50 pb50">
         <div class="layui-row layui-col-space30 lgray">
             <div class="layui-col-xs6">
-                <blockquote class="layui-elem-quote lh0 mb20 white f20 bg_none">关于我们<a href="about.html"
-                                                                                       class="fr lgray">了解详情</a>
-                </blockquote>
+                <blockquote class="layui-elem-quote lh0 mb20 white f20 bg_none">关于我们<a href="about.html" class="fr lgray">了解详情</a></blockquote>
                 <p class=" lh200">
                     <span class="fa fa-phone mr5 white" title="电话号码"></span><span class="mr10" title="电话号码">0791-83953621</span>
-                    <span class="fa fa-send ml10 mr5 white" title="企业邮箱"></span><span
-                        title="企业邮箱">3151511@spic.com</span>
+                    <span class="fa fa-send ml10 mr5 white" title="企业邮箱"></span><span title="企业邮箱">3151511@spic.com</span>
                 </p>
                 <p class=" lh200">
-                    <span class="fa fa-fax mr5 white" title="传真号码"></span><span class="mr10"
-                                                                                title="传真号码">0791-83953621</span>
+                    <span class="fa fa-fax mr5 white" title="传真号码"></span><span class="mr10" title="传真号码">0791-83953621</span>
                     <span class="fa fa-map-marker ml10 mr5 white" title="企业地址"></span><span title="企业地址">江西省南昌市青山湖区艾溪湖北路66号</span>
                 </p>
                 <p class="f14 lh200">创新创造是我们的特质。国家电投倡导全面创新创造，将创新融入技术、产品、制度、组织、文化、观念等方方面面；倡导全员创新创造，使创新创造成为国家电投人的品格。
@@ -233,34 +178,20 @@
                 <div class="mt30">
                     <blockquote class="layui-elem-quote lh0 mb20 white f20 bg_none">我们团队</blockquote>
                     <ul class="group_list_xs">
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group1-xs.jpg"></a>
-                        </li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
-                        </li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
-                        </li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
-                        </li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
-                        </li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
-                        </li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
-                        </li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
-                        </li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
-                        </li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
-                        </li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
-                        </li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
-                        </li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
-                        </li>
-                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a>
-                        </li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group1-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
+                        <li><a href="javascript:;"><img alt="" src="../../assets/common/img/avatars/group2-xs.jpg"></a></li>
                     </ul>
                 </div>
             </div>
@@ -277,12 +208,6 @@
         <p class="f14">2017 © 国电电投江西能源销售有限公司. ALL Rights Reserved</p>
     </div>
 </div>
-
-<!--零售电表格操作模板-->
-<script type="text/html" id="toolBtnsTradeNotice">
-    <a class="layui-btn layui-btn-primary layui-btn-sm" lay-event="preview">预览</a>
-    <a class="layui-btn layui-btn-sm" lay-event="download">下载</a>
-</script>
 
 <script src="../../assets/common/js/jquery.min.js"></script>
 <script src="../../assets/common/layui/layui.js"></script>
@@ -305,7 +230,7 @@
 
     layui.config({
         base: 'assets/js/' //你存放新模块的目录，注意，不是layui的模块目录
-    }).use('tradeNotice'); //加载入口
+    }).use('powerView'); //加载入口
 </script>
 
 </body>
