@@ -107,10 +107,10 @@
             <img src="../../assets/common/img/logo.png" alt="layui">
         </a>
         <!--未登录-->
-        <div class="layui-hide">
+        <div class="">
             <ul class="layui-nav layui-layout-right tr" style="right: 210px" lay-filter="">
                 <li class="layui-nav-item layui-this"><a href="index.html">首页</a></li>
-                <li class="layui-nav-item"><a href="">合作意向</a></li>
+                <li class="layui-nav-item"><a href="../intorduce/intorduce.html">合作意向</a></li>
                 <li class="layui-nav-item">
                     <a href="../news/news.html">政策行业动态</a>
                     <dl class="layui-nav-child tc">
@@ -122,31 +122,30 @@
                 <li class="layui-nav-item"><a href="../about/about.html">关于我们</a></li>
             </ul>
             <div class="layui-btn-group layui-layout-right" style="top: 11px">
-                <a href="../login/login.html" class="layui-btn">登录</a>
-                <a href="../login/reg.html" class="layui-btn layui-btn-normal">注册</a>
-                <a href="../login/login_admin.html" class="layui-btn layui-btn-danger">管理员</a>
+                <a id="login" href="javascript:;" class="layui-btn">登录</a>
+                <a id="reg" href="javascript:;" class="layui-btn layui-btn-normal">注册</a>
+                <a id="admin" href="javascript:;" class="layui-btn layui-btn-danger">管理员</a>
             </div>
         </div>
         <!--已登陆-->
-        <div class="">
+        <div class="layui-hide">
             <ul class="layui-nav layui-layout-right tr" style="right: 85px" lay-filter="">
-                <li class="layui-nav-item layui-this"><a href="">首页</a></li>
-                <li class="layui-nav-item"><a href="">合作意向</a></li>
+                <li class="layui-nav-item layui-this"><a href="index.html">首页</a></li>
+                <li class="layui-nav-item"><a href="../intorduce/intorduce.html">合作意向</a></li>
                 <li class="layui-nav-item">
-                    <a href="">政策行业动态</a>
+                    <a href="../news/news.html">政策行业动态</a>
                     <dl class="layui-nav-child tc">
                         <dd><a href="">政策动态</a></dd>
                         <dd><a href="">行业动态</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="">资料下载</a></li>
-                <li class="layui-nav-item"><a href="">关于我们</a></li>
-                <li class="layui-nav-item layui-hide"><a href="">客户中心</a></li>
-                <li class="layui-nav-item ">
-                    <a href="javascript:;"><img src="../../assets/common/img/avatars/kh.jpg"
-                                                class="layui-nav-img">spicofgx</a>
+                <li class="layui-nav-item"><a href="../files/files_center.html">资料下载</a></li>
+                <li class="layui-nav-item"><a href="../about/about.html">关于我们</a></li>
+                <li class="layui-nav-item">
+                    <a href="../selfspace/base_info.html"><img src="../../assets/common/img/avatars/avatar0.jpg"
+                                                               class="layui-nav-img">江铜集团</a>
                     <dl class="layui-nav-child tc">
-                        <dd><a href="javascript:;">客户中心</a></dd>
+                        <dd><a href="../selfspace/base_info.html">客户中心</a></dd>
                         <dd><a href="javascript:;">安全退出</a></dd>
                     </dl>
                 </li>

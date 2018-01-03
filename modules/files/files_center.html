@@ -15,7 +15,6 @@
     </style>
 </head>
 <body>
-
 <!--顶部导航-->
 <div class="layui-fluid layui-bg-black layui-header">
     <div class="layui-main">
@@ -25,8 +24,8 @@
         <!--未登录-->
         <div class="">
             <ul class="layui-nav layui-layout-right tr" style="right: 210px" lay-filter="">
-                <li class="layui-nav-item layui-this"><a href="../index/index.html">首页</a></li>
-                <li class="layui-nav-item"><a href="">合作意向</a></li>
+                <li class="layui-nav-item layui-this"><a href="index.html">首页</a></li>
+                <li class="layui-nav-item"><a href="../intorduce/intorduce.html">合作意向</a></li>
                 <li class="layui-nav-item">
                     <a href="../news/news.html">政策行业动态</a>
                     <dl class="layui-nav-child tc">
@@ -34,36 +33,34 @@
                         <dd><a href="">行业动态</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="">资料下载</a></li>
-                <li class="layui-nav-item"><a href="javascript:;">资料中心</a></li>
-                <li class="layui-nav-item"><a href="">关于我们</a></li>
+                <li class="layui-nav-item"><a href="../files/files_center.html">资料下载</a></li>
+                <li class="layui-nav-item"><a href="../about/about.html">关于我们</a></li>
             </ul>
             <div class="layui-btn-group layui-layout-right" style="top: 11px">
-                <a href="../login/login.html" class="layui-btn">登录</a>
-                <a href="../login/reg.html" class="layui-btn layui-btn-normal">注册</a>
-                <a href="" class="layui-btn layui-btn-danger">管理员</a>
+                <a id="login" href="javascript:;" class="layui-btn">登录</a>
+                <a id="reg" href="javascript:;" class="layui-btn layui-btn-normal">注册</a>
+                <a id="admin" href="javascript:;" class="layui-btn layui-btn-danger">管理员</a>
             </div>
         </div>
         <!--已登陆-->
         <div class="layui-hide">
             <ul class="layui-nav layui-layout-right tr" style="right: 85px" lay-filter="">
-                <li class="layui-nav-item layui-this"><a href="">首页</a></li>
-                <li class="layui-nav-item"><a href="">合作意向</a></li>
+                <li class="layui-nav-item layui-this"><a href="index.html">首页</a></li>
+                <li class="layui-nav-item"><a href="../intorduce/intorduce.html">合作意向</a></li>
                 <li class="layui-nav-item">
-                    <a href="">政策行业动态</a>
+                    <a href="../news/news.html">政策行业动态</a>
                     <dl class="layui-nav-child tc">
                         <dd><a href="">政策动态</a></dd>
                         <dd><a href="">行业动态</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="">资料下载</a></li>
-                <li class="layui-nav-item"><a href="">关于我们</a></li>
-                <li class="layui-nav-item layui-hide"><a href="">客户中心</a></li>
-                <li class="layui-nav-item ">
-                    <a href="javascript:;"><img src="../../assets/common/img/avatars/avatar0.jpg"
-                                                class="layui-nav-img">江铜集团</a>
+                <li class="layui-nav-item"><a href="../files/files_center.html">资料下载</a></li>
+                <li class="layui-nav-item"><a href="../about/about.html">关于我们</a></li>
+                <li class="layui-nav-item">
+                    <a href="../selfspace/base_info.html"><img src="../../assets/common/img/avatars/avatar0.jpg"
+                                                               class="layui-nav-img">江铜集团</a>
                     <dl class="layui-nav-child tc">
-                        <dd><a href="javascript:;">客户中心</a></dd>
+                        <dd><a href="../selfspace/base_info.html">客户中心</a></dd>
                         <dd><a href="javascript:;">安全退出</a></dd>
                     </dl>
                 </li>
@@ -75,9 +72,9 @@
 
 <!--页面标题背景-->
 <div class="top-title tc" style="background: url('../../assets/common/img/top_banner.jpg') no-repeat center;">
-    <a href="../news/" title="公司新闻"><h1 class="layui-anim layui-anim-scale">资料中心</h1></a>
+    <h1 class="layui-anim layui-anim-scale">资料中心</h1>
     <br><br>
-    <a href="" class="layui-btn layui-btn-big layui-anim layui-anim-scale">在线客服</a>
+    <a href="javascript:;" id="onlineChatBtn" class="layui-btn layui-btn-big layui-anim layui-anim-scale">在线客服</a>
     <a href="tel:0791-86877768" class="layui-btn layui-btn-primary layui-btn-big layui-anim layui-anim-scale" style="background:none;color:#fff;">0791-86877768</a>
 </div>
 

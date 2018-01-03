@@ -68,6 +68,7 @@
 .lh150{line-height:150%}
 .lh180{line-height:180%}
 .lh200{line-height:200%}
+.lh300{line-height:300%}
 .unl{text-decoration:underline;}
 .no_unl{text-decoration:none;}
 /*背景颜色*/
@@ -88,6 +89,7 @@
 .vm{vertical-align:middle}
 .pr{position:relative}
 .pa{position:absolute}
+.ps{position:static}
 .auto_ctr{margin-left: auto;margin-right: auto}
 .pa_ctr{position: absolute;left: 50%;
     -webkit-transform: translateX(-50%);
