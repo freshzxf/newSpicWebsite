@@ -1,9 +1,10 @@
 /**
  news入口
  **/
-layui.define(['layer','element','table'], function(exports){
+layui.define(['layer','element','table','laytpl'], function(exports){
     var layer = layui.layer,
         element = layui.element ,
+        laytpl = layui.laytpl,
         table = layui.table;
 
     //第一个实例
@@ -25,9 +26,14 @@ layui.define(['layer','element','table'], function(exports){
             ,dataName: 'data' //数据列表的字段名称，默认：data
         }
         ,cols: [[ //表头
-            {field: 'chargeDate', title: '年月日期',width:110,}
+            {field: 'chargeDate', title: '年月日期',width:110,}  //{{d.changeEd}}
             ,{field: 'chargeReal', title: '实际用电量（wkwh）',sort: true}
-            ,{field: 'chargeContract', title: '合同用电量(wkwh)',sort: true}
+            ,{field: 'chargeContract', title: '合同用电量(wkwh)',sort: true,event:'自定义',templet:'<div><span class=' +
+            ' {{d.class}}' +
+            '>' +
+            '{{d.chargeContract}}' +
+            '</span></div>'
+            }
             ,{field: 'chargeSurplus', title: '剩余用电量(wkwh)',sort: true}
             ,{field: 'chargeAmount', title: '偏差量(wkwh)/偏差率(%)', sort: true}
         ]]
@@ -41,6 +47,16 @@ layui.define(['layer','element','table'], function(exports){
             console.log(count);
         }
         ,page: true //是否显示分页
+    });
+
+    //监听单元格事件
+    table.on('tool(chargeTable)', function(obj){ //监听单元格时间
+        var data = obj.data;
+        // console.log(obj.data.changeEd)
+        // if(obj.event === 'setSign'){
+        if(obj.data.class){
+            openLayer('合同计划用电量修改记录','change_contract_detail_iframe.html','600','622')
+        }
     });
 
     exports('chargeReport', {}); //注意，这里是模块输出的核心，模块名必须和use时的模块名一致

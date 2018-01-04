@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>智慧售电营业厅登录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../../assets/common/layui/css/layui.css">
+    <link rel="stylesheet" href="../../assets/common/css/base.css">
+    <link rel="stylesheet" href="../../assets/lib/fancybox/jquery.fancybox.min.css">
+
+    <style>
+        /*层叠layui中label样式*/
+        .layui-form-pane .layui-form-label{width: 160px}
+        .layui-form-pane .layui-input-block{margin-left: 160px}
+        .unit{position:absolute;top: 12px;right: 15px;color: gray;}
+    </style>
+</head>
+<body>
+<div >
+    <form class="layui-form layui-form-pane auto_ctr pl10 pr10 pt30 pb30" style="display: table" action="">
+        <div class="layui-form-item">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-xs12">
+                    <label class="layui-form-label" title="修改时间">修改时间</label>
+                    <div class="layui-input-block">
+                        <input type="text" lay-verify="required" title="2018-01-01" value="2018-01-01" readonly autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-xs12">
+                    <label class="layui-form-label" title="原计划用电量">原计划用电量</label>
+                    <div class="layui-input-block">
+                        <input type="text" lay-verify="required" title="38898" value="38898" readonly autocomplete="off" class="layui-input">
+                        <span class="unit">kwh</span>
+                    </div>
+                </div>
+                <div class="layui-col-xs12">
+                    <label class="layui-form-label" title="现合同计划用电量">现合同计划用电量</label>
+                    <div class="layui-input-block">
+                        <input type="text" lay-verify="required" title="28998" value="28998" readonly autocomplete="off" class="layui-input">
+                        <span class="unit">kwh</span>
+                    </div>
+                </div>
+                <div class="layui-col-xs12 ">
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">备注信息</label>
+                        <div class="layui-input-block">
+                            <textarea placeholder="备注信息... ..." class="layui-textarea" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--分隔标题-->
+        <fieldset class="layui-elem-field layui-field-title tc" >
+            <legend class="gray">修改确认函</legend>
+        </fieldset>
+        <div class="tc">
+            <a href="assets/img/timg.jpg" data-fancybox="0" data-caption="修改确认函">
+                <img src="assets/img/timg.jpg" alt="">
+            </a>
+        </div>
+    </form>
+</div>
+
+<script src="../../assets/common/js/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/common/layui/layui.js" type="text/javascript"></script>
+<script src="../../assets/lib/fancybox/jquery.fancybox.min.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,47 +1,22 @@
 {
   "code": "200",
+  "pages":"2",
   "data":[
     {
-      "chargeDate": "2017-01",
-      "chargeReal": "1118.902",
-      "chargeContract": "1000.0",
-      "chargeSurplus": "5450.0",
-      "chargeAmount": "118.902 /11.89"
+      "imgSrc": "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=733348839,1314334278&fm=27&gp=0.jpg",
+      "link": "http://www.baidu.com",
+      "mainTit": "江西省发展改革委关于规范热电联产、资源综合利用等发电项目上网电价管理的通知",
+      "subTit": "各设区市、省直管试点县（市）发展改革委、物价局，国网江西省电力公司：根据《中共江西省委、江西省人民政府关于加快推进价格机制改革的实施意见》（赣发[2016]17号）精神，为建立公开、透明的定价规则",
+      "viewTimes": "30",
+      "publishTime": "118.902 /11.89"
     },
     {
-      "chargeDate": "2017-02",
-      "chargeReal": "1118.902",
-      "chargeContract": "1000.0",
-      "chargeSurplus": "5450.0",
-      "chargeAmount": "118.902 /11.89"
-    },
-    {
-      "chargeDate": "2017-02",
-      "chargeReal": "1118.902",
-      "chargeContract": "1000.0",
-      "chargeSurplus": "5450.0",
-      "chargeAmount": "118.902 /11.89"
-    },
-    {
-      "chargeDate": "2017-02",
-      "chargeReal": "1118.902",
-      "chargeContract": "1000.0",
-      "chargeSurplus": "5450.0",
-      "chargeAmount": "118.902 /11.89"
-    },
-    {
-      "chargeDate": "2017-02",
-      "chargeReal": "1118.902",
-      "chargeContract": "1000.0",
-      "chargeSurplus": "5450.0",
-      "chargeAmount": "118.902 /11.89"
-    },
-    {
-      "chargeDate": "2017-02",
-      "chargeReal": "1118.902",
-      "chargeContract": "1000.0",
-      "chargeSurplus": "5450.0",
-      "chargeAmount": "118.902 /11.89"
+      "imgSrc": "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=733348839,1314334278&fm=27&gp=0.jpg",
+      "link": "http://www.hao123.com",
+      "mainTit": "江西省发展改革委关于规范热电联产、资源综合利用等发电项目上网电价管理的通知",
+      "subTit": "各设区市、省直管试点县（市）发展改革委、物价局，国网江西省电力公司：根据《中共江西省委、江西省人民政府关于加快推进价格机制改革的实施意见》（赣发[2016]17号）精神，为建立公开、透明的定价规则",
+      "viewTimes": "30",
+      "publishTime": "118.902 /11.89"
     }
   ]
 }  

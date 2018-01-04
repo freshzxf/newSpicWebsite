@@ -7,7 +7,18 @@ layui.define(['layer', 'form','element','upload'], function(exports){
         upload = layui.upload,
         form = layui.form;
 
-    upload.render({
+    form.on('submit(myInfo)', function(data){
+        if(data.field.pass !== data.field.repass){
+            layer.msg('两次输入密码不一致')
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。        } //当前容器的全部表单字段，名值对形式：{name: value}
+        }else{
+            $('#formPwd')[0].reset();
+            return false;
+        }
+
+    });
+
+   /* upload.render({
         url: 'assets/mockUploadResponseData.json'
         ,elem: '#upload'  //指定原始元素，默认直接查找class="layui-upload-file"
         //,method: 'get' //上传接口的http类型,默认为post
@@ -26,7 +37,7 @@ layui.define(['layer', 'form','element','upload'], function(exports){
         ,success: function(res){
             console.log(res);
         }
-    });
+    });*/
 
     exports('baseInfo', {}); //注意，这里是模块输出的核心，模块名必须和use时的模块名一致
 });

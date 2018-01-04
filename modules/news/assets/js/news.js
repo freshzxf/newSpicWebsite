@@ -25,10 +25,19 @@ layui.define(['layer', 'flow','element','carousel','util'], function(exports){
 
             var lis = [];
             //以jQuery的Ajax请求为例，请求下一页数据（注意：page是从2开始返回）
-            $.get('/api/list?page='+page, function(res){
+            $.get('./assets/mockNewsData.json?page='+page, function(res){
+                console.log(res)
                 //假设你的列表返回在data集合中
                 layui.each(res.data, function(index, item){
-                    lis.push('<li>'+ item.title +'</li>');
+                    var new_li = $('#policyCon').children('li[data-type="template"]').clone(true)
+                        .removeAttr('data-type').removeClass('none')
+                        .find('.link').attr('href',item.link)
+                        .end().find('.img_src').attr('src',item.imgSrc)
+                        .end().find('.main_tit').html(item.mainTit).attr('href',item.link)
+                        .end().find('.sub_tit').html(item.subTit)
+                        .end().find('.view_times').html(item.viewTimes)
+                        .end().find('.publish_time').html(item.publishTime)
+                    lis.push(new_li);
                 });
                 //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
                 //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多

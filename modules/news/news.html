@@ -28,7 +28,7 @@
             border-bottom: 3px solid #234;
         }
         /*tab内容*/
-        .news-item-list li{display: inline-block;vertical-align: middle; *display: inline; *zoom:1;}
+        .news-item-list li{vertical-align: middle; *display: inline; *zoom:1;}
         .news-item-list li>div:hover{box-shadow: 0 0 50px #ddd;}
         .news-item-img{position:relative;display:block;}
         .news-item-img img{width:100%;height:180px;}
@@ -117,7 +117,24 @@
     <div class="layui-tab-content">
         <div class="layui-tab-item layui-show">
             <ul id="policyCon" class="layui-main layui-row news-item-list">
-                <li class="layui-col-xs3">
+                <li data-type="template" class="layui-col-xs3 none">
+                    <div class="m10 p10 bg_fff">
+                        <a class="news-item-img link" href="" target="_blank">
+                            <img alt="" src="" class="img_src">
+                            <i class="fa fa-search"></i>
+                        </a>
+                        <h2 class="layui-elip">
+                            <a href="" target="_blank" class="main_tit"></a>
+                        </h2>
+                        <p class="news-item-desc sub_tit"></p>
+                        <div class="news-item-info">
+                            <p class="layui-elip">
+                                <i class="fa fa-eye"></i><span class="view_times"></span><span class="publish_time"></span>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+<!--                <li class="layui-col-xs3">
                     <div class="m10 p10 bg_fff">
                         <a class="news-item-img" href="news_detail.html" target="_blank">
                             <img alt="" src="assets/img/policy/policy1_img1.jpg">
@@ -284,7 +301,7 @@
                             </p>
                         </div>
                     </div>
-                </li>
+                </li>-->
             </ul>
         </div>
         <div class="layui-tab-item">

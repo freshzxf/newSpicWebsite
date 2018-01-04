@@ -3,44 +3,50 @@
   "data":[
     {
       "chargeDate": "2017-01",
-      "chargeReal": "1118.902",
+      "chargeReal": "1118.01",
       "chargeContract": "1000.0",
       "chargeSurplus": "5450.0",
+      "class":"red",
       "chargeAmount": "118.902 /11.89"
     },
     {
       "chargeDate": "2017-02",
-      "chargeReal": "1118.902",
+      "chargeReal": "1118.02",
       "chargeContract": "1000.0",
       "chargeSurplus": "5450.0",
+      "class":"red",
       "chargeAmount": "118.902 /11.89"
     },
     {
       "chargeDate": "2017-02",
-      "chargeReal": "1118.902",
+      "chargeReal": "1118.03",
       "chargeContract": "1000.0",
       "chargeSurplus": "5450.0",
+      "class":"",
       "chargeAmount": "118.902 /11.89"
     },
     {
       "chargeDate": "2017-02",
-      "chargeReal": "1118.902",
+      "chargeReal": "1118.04",
       "chargeContract": "1000.0",
       "chargeSurplus": "5450.0",
+      "class":"",
       "chargeAmount": "118.902 /11.89"
     },
     {
       "chargeDate": "2017-02",
-      "chargeReal": "1118.902",
+      "chargeReal": "1118.05",
       "chargeContract": "1000.0",
       "chargeSurplus": "5450.0",
+      "class":"",
       "chargeAmount": "118.902 /11.89"
     },
     {
       "chargeDate": "2017-02",
-      "chargeReal": "1118.902",
+      "chargeReal": "1118.06",
       "chargeContract": "1000.0",
       "chargeSurplus": "5450.0",
+      "class":"",
       "chargeAmount": "118.902 /11.89"
     }
   ]
