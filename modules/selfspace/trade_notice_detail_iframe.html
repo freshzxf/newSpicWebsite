@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>智慧售电营业厅登录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../../assets/common/layui/css/layui.css">
+    <link rel="stylesheet" href="../../assets/common/css/base.css">
+    <link rel="stylesheet" href="../../assets/lib/fancybox/jquery.fancybox.min.css">
+
+    <style>
+        /*层叠layui中label样式*/
+ /*       .layui-form-pane .layui-form-label{width: 120px}
+        .layui-form-pane .layui-input-block{margin-left: 120px}*/
+        .unit{position:absolute;top: 12px;right: 15px;color: gray;}
+    </style>
+</head>
+<body>
+<div >
+    <form class="layui-form layui-form-pane  auto_ctr pl10 pr10 pt30 pb30" style="display: table" action="">
+
+        <div class="layui-form-item">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-xs6">
+                    <label class="layui-form-label">
+                        公告标题</label>
+                    <div class="layui-input-block">
+                        <input type="text" lay-verify="required" title="国家电投集团江西能源销售有限公司" value="国家电投集团江西能源销售有限公司" readonly autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-xs6">
+                    <label class="layui-form-label">
+                        交易时间</label>
+                    <div class="layui-input-block">
+                        <input type="text" lay-verify="required" title="2017-08-08" value="2017-08-08" readonly autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-col-xs6">
+                    <label class="layui-form-label">
+                        交易电价</label>
+                    <div class="layui-input-block">
+                        <input type="text" lay-verify="required" title="3333" value="3333" readonly autocomplete="off" class="layui-input">
+                        <span class="unit">元</span>
+                    </div>
+                </div>
+                <div class="layui-col-xs6">
+                    <label class="layui-form-label">
+                        差价电费</label>
+                    <div class="layui-input-block">
+                        <input type="text" lay-verify="required" title="444" value="444" readonly autocomplete="off" class="layui-input">
+                        <span class="unit">元</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--分隔标题-->
+        <fieldset class="layui-elem-field layui-field-title mt30 tc" >
+            <legend class="gray">合同详情预览</legend>
+        </fieldset>
+        <div class="layui-form-item layui-text tj">
+            合同详情预览合同详情预览合同详情预览合同详情预览合同详情预览合同详情预览合同详情预览合同详情预览合同详情预览合同详情预览合同详情预览合同详情预览合同详情预览合同详情预览合同详情预览合同详情预览合同详情预览合同详情预览
+            <br>
+            <a href="assets/img/timg.jpg" data-fancybox="0" data-caption="修改确认函">
+                <img src="assets/img/timg.jpg" alt="">
+            </a>
+        </div>
+    </form>
+</div>
+
+<script src="../../assets/common/js/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/common/layui/layui.js" type="text/javascript"></script>
+<script src="../../assets/lib/fancybox/jquery.fancybox.min.js" type="text/javascript"></script>
+
+
+<script>
+
+    layui.use(['form','laydate','layer'],function () {
+        var form = layui.form,
+            laydate = layui.laydate,
+            layer = layui.layer,
+            upload = layui.upload;
+        //年月选择器
+        laydate.render({
+            elem: '#date'
+            ,type: 'month'
+        });
+
+        /*所有表单符合要求了提交函数*/
+        form.on('submit(login_index)', function (data) {
+            loading = layer.load(2, {
+                shade: [0.2, '#000']
+            });
+            var param = data.field;
+            jq.post('/login/index.html', param, function (data) {
+                if (data.code == 200) {
+                    layer.close(loading);
+                    layer.msg(data.msg, {icon: 1, time: 1000}, function () {
+                        window.parent.location.href = '../index/index.html'
+                    });
+                } else {
+                    layer.close(loading);
+                    layer.msg(data.msg, {icon: 2, anim: 6, time: 1000});
+                }
+            });
+            return false;
+        });
+    })
+</script>
+</body>
+</html>

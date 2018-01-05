@@ -167,6 +167,10 @@
           </div>
         </div>
         <div class="layui-form layui-form-pane layui-tab-item">
+          <!--购售电合同-->
+          <div class="mt30 mb30">
+            <table id="templateTable" lay-filter="templateTable"></table>
+          </div>
         </div>
       </div>
     </div>
@@ -231,6 +235,11 @@
 </script>
 <!--购售电表格操作模板-->
 <script type="text/html" id="toolBtnsPurchaseSale">
+  <a class="layui-btn layui-btn-primary layui-btn-sm" lay-event="preview">预览</a>
+  <a class="layui-btn layui-btn-sm" lay-event="download">下载</a>
+</script>
+<!--购售电表格操作模板-->
+<script type="text/html" id="toolBtnsTemplate">
   <a class="layui-btn layui-btn-primary layui-btn-sm" lay-event="preview">预览</a>
   <a class="layui-btn layui-btn-sm" lay-event="download">下载</a>
 </script>

@@ -1,99 +1,34 @@
 /**
  页面模块入口
  **/
-layui.define(['layer', 'element', 'form', 'layedit', 'laydate', 'table'], function (exports) {
+layui.define(['layer', 'element', 'form', 'layedit', 'laydate', 'table','upload'], function (exports) {
     var form = layui.form
         , layer = layui.layer
         , layedit = layui.layedit
         , laydate = layui.laydate
+        , upload = layui.upload
         , table = layui.table;
 
-    //结算项目
-    table.render({
-        elem: '#settlementProjects'
-        , url: './assets/mockSettlementProjectData.json' //数据接口
-        , width: 948
-        /*定义发送请求的参数*/
-        /*,request: {
-            pageName: 'page' //页码的参数名称，默认：page
-            ,limitName: 'limit' //每页数据量的参数名，默认：limit
-        }*/
-        /*定义接收服务器返回数据的格式要求*/
-        , response: {
-            statusName: 'code' //数据状态的字段名称，默认：code
-            , statusCode: 200 //成功的状态码，默认：0
-            , msgName: 'msg' //状态信息的字段名称，默认：msg
-            , countName: 'count' //数据总数的字段名称，默认：count
-            , dataName: 'data' //数据列表的字段名称，默认：data
-        }
-        , cols: [[ //表头
-            {field: 'sePro', title: '结算项目', fixed: 'left'}
-            , {field: 'seAmo', title: '电量', edit: 'number',sort: true}
-            , {field: 'sePri', title: '电价',  edit: 'number',sort: true}
-            , {field: 'seMon', title: '金额',  edit: 'number',sort: true}
-        ]]
-        , done: function (res, curr, count) {
-            //如果是异步请求数据方式，res即为你接口返回的信息。
-            //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
-            console.log(res);
-            //得到当前页码
-            console.log(curr);
-            //得到数据总量
-            console.log(count);
-        }
-    });
-    //监听单元格编辑
-    table.on('edit(settlementProjects)', function(obj){
-        var value = obj.value //得到修改后的值
-            ,data = obj.data //得到所在行所有键值
-            ,field = obj.field; //得到字段
-        console.log(data)
-        layer.msg(data.sePro + '更改为：'+ value);
-    });
 
-    //计量装置
-    table.render({
-        elem: '#meteringDevice'
-        , url: './assets/mockMeteringDeviceData.json' //数据接口
-        , width: 948
-        /*定义发送请求的参数*/
-        /*,request: {
-            pageName: 'page' //页码的参数名称，默认：page
-            ,limitName: 'limit' //每页数据量的参数名，默认：limit
-        }*/
-        /*定义接收服务器返回数据的格式要求*/
-        , response: {
-            statusName: 'code' //数据状态的字段名称，默认：code
-            , statusCode: 200 //成功的状态码，默认：0
-            , msgName: 'msg' //状态信息的字段名称，默认：msg
-            , countName: 'count' //数据总数的字段名称，默认：count
-            , dataName: 'data' //数据列表的字段名称，默认：data
-        }
-        , cols: [[ //表头
-            {field: 'dev', title: '计量装置', edit: 'number', fixed: 'left'}
-            , {field: 'timeInt', title: '时段', edit: 'number'}
-            , {field: 'lastTable', title: '上月表底', edit: 'number',sort: true}
-            , {field: 'nowTable', title: '本月表底',  edit: 'number',sort: true}
-            , {field: 'rate', title: '倍率',  edit: 'number',sort: true}
-            , {field: 'amount', title: '电量',  edit: 'number',sort: true}
-        ]]
-        , done: function (res, curr, count) {
-            //如果是异步请求数据方式，res即为你接口返回的信息。
-            //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
+    upload.render({
+        url: 'assets/mockUploadResponseData.json'
+        ,elem: '#upload'  //指定原始元素，默认直接查找class="layui-upload-file"
+        //,method: 'get' //上传接口的http类型,默认为post
+        //,accept: 'file' //允许上传的文件类型，如果 accept 未设定，那么限制的就是图片的文件格式
+        //,size: 50 //最大允许上传的文件大小
+        ,done: function(res, index, upload){
+            if(res.code == 200){
+                $('#upload').val(res.data.src);
+                layer.msg(res.data.src+'上传成功');
+            }
             console.log(res);
-            //得到当前页码
-            console.log(curr);
-            //得到数据总量
-            console.log(count);
         }
-    });
-    //监听单元格编辑
-    table.on('edit(meteringDevice)', function(obj){
-        var value = obj.value //得到修改后的值
-            ,data = obj.data //得到所在行所有键值
-            ,field = obj.field; //得到字段
-        console.log(data)
-        layer.msg(data.sePro + '更改为：'+ value);
+        ,error: function(res){
+            console.log(res);
+        }
+        ,success: function(res){
+            console.log(res);
+        }
     });
 
     //历史结算上报单
@@ -147,26 +82,13 @@ layui.define(['layer', 'element', 'form', 'layedit', 'laydate', 'table'], functi
     //日期
     laydate.render({
         elem: '#date',
-        type: 'year',
+        type: 'month',
         value: new Date(),
         max: 7
     });
-    //创建一个编辑器
-    var editIndex = layedit.build('LAY_demo_editor');
-    //自定义验证规则
-    form.verify({
-        title: function (value) {
-            if (value.length < 5) {
-                return '标题至少得5个字符啊';
-            }
-        }
-        , pass: [/(.+){6,12}$/, '密码必须6到12位']
-        , content: function (value) {
-            layedit.sync(editIndex);
-        }
-    });
+
     //监听提交
-    form.on('submit(demo1)', function (data) {
+    form.on('submit(settlement)', function (data) {
         layer.alert(JSON.stringify(data.field), {
             title: '最终的提交信息'
         })

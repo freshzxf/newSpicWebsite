@@ -50,7 +50,7 @@ layui.define(['layer', 'element', 'form', 'layedit', 'table'], function (exports
     table.on('tool(historyConsult)', function(obj){
         var data = obj.data;
         if(obj.event === 'preview'){
-            openLayer('业务咨询单详情','contract_detail_iframe.html','986','622')
+            openLayer('业务咨询单详情','business_consulting_detail_iframe.html','600','550')
             // layer.msg('预览操作purchaseSaleTable');
         }else if(obj.event === 'download'){
             layer.alert('下载文件：<br>'+ JSON.stringify(data))

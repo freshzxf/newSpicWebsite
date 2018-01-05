@@ -46,7 +46,7 @@ layui.define(['layer','element','table'], function(exports){
     table.on('tool(tradeNotice)', function(obj){
         var data = obj.data;
         if(obj.event === 'preview'){
-            layer.msg('预览操作purchaseSaleTable');
+            openLayer('交易公告详情','trade_notice_detail_iframe.html','800','622')
         }else if(obj.event === 'download'){
             layer.alert('下载文件：<br>'+ JSON.stringify(data))
         }
