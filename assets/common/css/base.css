@@ -24,7 +24,7 @@
 .pointer{cursor: pointer}
 /* 设置显示和隐藏，通常用来与 js 配合 */
 .hide {
-    display:none;
+    display:none!important;
 }
 .block {
     display:block;
