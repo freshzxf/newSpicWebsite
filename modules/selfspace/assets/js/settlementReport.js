@@ -73,7 +73,7 @@ layui.define(['layer', 'element', 'form', 'layedit', 'laydate', 'table','upload'
     table.on('tool(historySettlementReport)', function(obj) {
         var data = obj.data;
         if (obj.event === 'preview') {
-            openLayer('购售电合同详情', 'contract_detail_iframe.html', '986', '622')
+            openLayer('购售电合同详情', 'settlement_report_detail_iframe.html', '986', '622')
             // layer.msg('预览操作purchaseSaleTable');
         } else if (obj.event === 'download') {
             layer.alert('下载文件：<br>' + JSON.stringify(data))

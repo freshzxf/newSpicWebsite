@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>智慧售电营业厅登录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../../assets/common/layui/css/layui.css">
+    <link rel="stylesheet" href="../../assets/common/css/base.css">
+    <link rel="stylesheet" href="../../assets/lib/fancybox/jquery.fancybox.min.css">
+
+    <style>
+        .layui-table.report td{padding: 0 0}
+        .layui-input{height: 30px;border: 0}
+    </style>
+</head>
+<body class="pl10 pr10 pt10 pb10">
+    <table class="layui-table report" lay-size="sm">
+        <thead>
+        <tr>
+            <th style="text-align: center!important;">用电户号<span class="layui-badge-dot layui-badge ml5"></span></th>
+            <th style="text-align: center!important;">抄表段号<span class="layui-badge-dot layui-badge ml5"></span></th>
+            <th style="text-align: center!important;">结算年月<span class="layui-badge-dot layui-badge ml5"></span></th>
+            <th style="text-align: center!important;">结算单据<span class="layui-badge-dot layui-badge ml5"></span></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <input type="text" lay-verify="required" placeholder="输入用电户号" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" lay-verify="required" placeholder="输入抄表段号" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" lay-verify="required" placeholder="请选择结算年月" autocomplete="off" id="date" class="layui-input pointer" readonly>
+            </td>
+            <td class="tc">
+                <a href="assets/img/timg.jpg" data-fancybox="0" data-caption="修改确认函" class="green" style="font-size: 12px">
+                    查看结算单据
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!--项目用电情况-->
+    <table class="layui-table report"  lay-size="sm">
+        <thead>
+        <tr>
+            <th>结算项目</th>
+            <th>电量（kwh）<span class="layui-badge-dot layui-badge ml5"></span></th>
+            <th>电价（元）</th>
+            <th>金额（元）</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="pl10 black fb">大工业用电（平）</td>
+            <td>
+                <input type="number" lay-verify="required" placeholder="输入电量" autocomplete="off" class="layui-input" lay-size="sm">
+            </td>
+            <td>
+                <input type="text" placeholder="输入电价" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" placeholder="输入金额" autocomplete="off" class="layui-input">
+            </td>
+        </tr>
+        <tr>
+            <td class="pl10 black fb">非居民照明（平）</td>
+            <td>
+                <input type="number" lay-verify="required" placeholder="输入电量" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" placeholder="输入电价" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" placeholder="输入金额" autocomplete="off" class="layui-input">
+            </td>
+        </tr>
+        <tr>
+            <td class="pl10 black fb">一般工商业（平）</td>
+            <td>
+                <input type="number" lay-verify="required" placeholder="输入电量" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" placeholder="输入电价" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" placeholder="输入金额" autocomplete="off" class="layui-input">
+            </td>
+        </tr>
+        <tr>
+            <td class="pl10 black fb">非工业（平）</td>
+            <td>
+                <input type="number" lay-verify="required" placeholder="输入电量" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" placeholder="输入电价" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" placeholder="输入金额" autocomplete="off" class="layui-input">
+            </td>
+        </tr>
+        <tr>
+            <td class="pl10 black fb">其他（平）</td>
+            <td>
+                <input type="number" lay-verify="required" placeholder="输入电量" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" placeholder="输入电价" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" placeholder="输入金额" autocomplete="off" class="layui-input">
+            </td>
+        </tr>
+        <tr>
+            <td class="pl10 black fb">谷电费</td>
+            <td>
+                <input type="number" lay-verify="required" placeholder="输入电量" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" placeholder="输入电价" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" placeholder="输入金额" autocomplete="off" class="layui-input">
+            </td>
+        </tr>
+        <tr>
+            <td class="pl10 black fb">峰电费</td>
+            <td>
+                <input type="number" lay-verify="required" placeholder="输入电量" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" placeholder="输入电价" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" placeholder="输入金额" autocomplete="off" class="layui-input">
+            </td>
+        </tr>
+        <tr>
+            <td class="pl10 black fb">尖峰电费</td>
+            <td>
+                <input type="number" lay-verify="required" placeholder="输入电量" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" placeholder="输入电价" autocomplete="off" class="layui-input">
+            </td>
+            <td>
+                <input type="text" placeholder="输入金额" autocomplete="off" class="layui-input">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!--计量装置情况-->
+    <table class="layui-table report"  lay-size="sm">
+        <thead>
+        <tr>
+            <th>计量装置</th>
+            <th>时段</th>
+            <th>上月表底</th>
+            <th>本月表底</th>
+            <th>倍率</th>
+            <th>电量（kwh）</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td class="tc black fb">有功</td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td class="tc black fb">无功</td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td class="tc black fb">尖峰</td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td class="tc black fb">峰</td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td class="tc black fb">谷</td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" placeholder="输入" autocomplete="off" class="layui-input"></td>
+        </tr>
+        </tbody>
+    </table>
+    <!--总计-->
+    <table class="layui-table report"  lay-size="sm">
+        <thead>
+        <tr>
+            <th>有功变损<span class="layui-badge-dot layui-badge ml5"></span></th>
+            <th>总有功<span class="layui-badge-dot layui-badge ml5"></span></th>
+            <th>无功变损<span class="layui-badge-dot layui-badge ml5"></span></th>
+            <th>总无功<span class="layui-badge-dot layui-badge ml5"></span></th>
+            <th>线损<span class="layui-badge-dot layui-badge ml5"></span></th>
+            <th>计费容量<span class="layui-badge-dot layui-badge ml5"></span></th>
+            <th>基本电费（元）<span class="layui-badge-dot layui-badge ml5"></span></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input type="text" lay-verify="required" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" lay-verify="required" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" lay-verify="required" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" lay-verify="required" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" lay-verify="required" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" lay-verify="required" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" lay-verify="required" placeholder="输入" autocomplete="off" class="layui-input"></td>
+        </tr>
+        </tbody>
+        <thead>
+        <tr>
+            <th>力率<span class="layui-badge-dot layui-badge ml5"></span></th>
+            <th>增减率<span class="layui-badge-dot layui-badge ml5"></span></th>
+            <th>力调电费（元）<span class="layui-badge-dot layui-badge ml5"></span></th>
+            <th>合计电费（元）<span class="layui-badge-dot layui-badge ml5"></span></th>
+            <th>应缴电费（元）<span class="layui-badge-dot layui-badge ml5"></span></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input type="text" lay-verify="required" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" lay-verify="required" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" lay-verify="required" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" lay-verify="required" placeholder="输入" autocomplete="off" class="layui-input"></td>
+            <td><input type="text" lay-verify="required" placeholder="输入" autocomplete="off" class="layui-input"></td>
+        </tr>
+        </tbody>
+    </table>
+<script src="../../assets/common/js/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/common/layui/layui.js" type="text/javascript"></script>
+<script src="../../assets/lib/fancybox/jquery.fancybox.min.js" type="text/javascript"></script>
+</body>
+</html>

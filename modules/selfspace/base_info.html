@@ -15,6 +15,8 @@
 
         #notice{max-width:1000px;overflow:hidden;}
         #notice ul li{float:left;margin:0 10px}
+        /*单位*/
+        .unit{position:absolute;top: 9px;right: 15px;color: gray;}
 
         .fly-panel{margin-bottom: 15px;border-radius: 2px;background-color: #fff;box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);}
         .fly-panel[pad20]{padding: 20px;}
@@ -33,7 +35,6 @@
 
         /*必填项标识*/
         .layui-badge-dot.layui-badge.pa{left: 8px;top: 14px}
-
 
     </style>
 </head>
@@ -139,7 +140,6 @@
             <a href="trade_notice.html"><i class="layui-icon">&#xe645;</i>交易公告</a>
         </li>
     </ul>
-
     <div class="fly-panel fly-panel-user bg_fff" pad20>
         <div class="layui-tab layui-tab-brief">
             <ul class="layui-tab-title">
@@ -373,7 +373,8 @@
                                                 <label class="layui-form-label" title="最高供电电压">最高供电电压</label>
                                                 <div class="layui-input-block">
                                                     <input type="text" class="layui-input"
-                                                           placeholder="请输入最高供电电压（单位：KV）">
+                                                           placeholder="请输入最高供电电压">
+                                                    <span class="unit">KV</span>
                                                 </div>
                                             </div>
                                             <!--行二-->
@@ -381,7 +382,8 @@
                                                 <label class="layui-form-label" title="运行容量">运行容量</label>
                                                 <div class="layui-input-block">
                                                     <input type="text" class="layui-input"
-                                                           placeholder="请输入运行容量（单位：MVA）">
+                                                           placeholder="请输入运行容量">
+                                                    <span class="unit">MVA</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -391,7 +393,8 @@
                                                 <label class="layui-form-label" title="合同容量">合同容量</label>
                                                 <div class="layui-input-block">
                                                     <input type="text" class="layui-input"
-                                                           placeholder="请输入合同容量（单位：MVW）">
+                                                           placeholder="请输入合同容量">
+                                                    <span class="unit">MVA</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -495,7 +498,8 @@
                                         <div class="layui-form-item">
                                             <label class="layui-form-label" title="目录电价">目录电价</label>
                                             <div class="layui-input-block">
-                                                <input type="text" class="layui-input" placeholder="请输入目录电价（单价：元/MWH）">
+                                                <input type="text" class="layui-input" placeholder="请输入目录电价">
+                                                <span class="unit">MWH</span>
                                             </div>
                                         </div>
                                     </div>
@@ -518,7 +522,8 @@
                                         <div class="layui-form-item">
                                             <label class="layui-form-label" title="政府基金及附加">政府基金及附加</label>
                                             <div class="layui-input-block">
-                                                <input type="text" class="layui-input" placeholder="政府基金及附加（单价：元/MVA）">
+                                                <input type="text" class="layui-input" placeholder="政府基金及附加">
+                                                <span class="unit">MVA</span>
                                             </div>
                                         </div>
                                     </div>
@@ -575,7 +580,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <!--页脚-->
