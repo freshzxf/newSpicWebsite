@@ -41,7 +41,7 @@ layui.define(['layer', 'util','element'], function (exports) {
     });
 
     $('#reg').on('click', function () {
-        openLayer('用户注册', '../login/reg_iframe.html', '440', '420');
+        openLayer('用户注册', '../login/reg_iframe.html', '440', '460');
     });
 
     $('#admin').on('click', function () {
@@ -56,15 +56,18 @@ layui.define(['layer', 'util','element'], function (exports) {
     /*固定右下角工具*/
     util.fixbar({
         bar1: true
-        , bar2: true
+        // , bar2: true
+        , bar2: '&#xe63a;'
         , css: {right: 50, bottom: 100}
         , bgcolor: '#393D49'
         , click: function (type) {
             if (type === 'bar1') {
                 openwindow('http://p.qiao.baidu.com/cps/chat?siteId=11555035&userId=22742801', '', '585', '540')
             } else if (type === 'bar2') {
+                window.open('http://wpa.qq.com/msgrd?v=3&uin='+38873493+'&site=qq&menu=true')
+            }/* else if (type === 'bar2') {
                 window.open('../help/help_hall.html')
-            } else if (type === 'top') {
+            }*/ else if (type === 'top') {
                 $('html,body').animate({
                     'scrollTop': 0
                 }, 500);
