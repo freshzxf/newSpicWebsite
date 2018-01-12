@@ -118,10 +118,19 @@
             background-size: 100%
         }
 
-        .partners{overflow:hidden;width: 1200px;margin: auto}
-        .partners ul li{float:left;padding: 20px 0 50px 0}
+        .advantage{overflow:hidden;width:1200px;height:260px;margin: auto}
+        .advantage ul li{float: left;margin: 0 10px;overflow: hidden}
+        .advantage ul li img{
+            -moz-transition: all 1s ease 0s;
+            -ms-transition: all 1s ease 0s;
+            -o-transition: all 1s ease 0s;
+            -webkit-transition: all 1s ease 0s;
+            transition: all 1s ease 0s;
+        }
+
+        .partners{overflow:hidden;width:1200px;margin: auto}
+        .partners ul li{float: left;padding: 20px 10px 50px 10px}
         .partners ul li img{
-            margin: 0 10px;
             -moz-transition: all 1s ease 0s;
             -ms-transition: all 1s ease 0s;
             -o-transition: all 1s ease 0s;
@@ -139,7 +148,7 @@
 <div class="layui-fluid layui-bg-black layui-header">
     <div class="layui-main">
         <a class="logo" href="index.html">
-            <img src="../../assets/common/img/logo.png" alt="layui">
+            <img src="../../assets/common/img/hd-logo.png" alt="layui">
         </a>
         <!--未登录-->
         <div class="">
@@ -306,7 +315,7 @@
         </div>
     </div>
 </div>-->
-<div class="bg_fff">
+<!--<div class="bg_fff">
     <div class="layui-main">
         <div class="tc pt50 pb50">
             <div class="mb30 layui-anim layui-anim-scale">
@@ -397,8 +406,74 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
+<!--我们优势-->
+<div class="bg_fff">
+    <div class="tc pt50 pb50 layui-anim layui-anim-scale">
+        <h3 class="mb10 f35 fw300">合作伙伴</h3>
+        <p class="pt5 mb10 gray dis_table auto_ctr border_top_black_2px">Success</p>
+    </div>
+    <div id="advantage" class="advantage tc">
+        <ul class="">
+            <li>
+                <a class="img-hover block w250" href="" title="行业翘楚">
+                    <div class="over_hide mb10">
+                        <img class="w" src="assets/img/advantage/advantage05.jpg">
+                    </div>
+                    <fieldset class="layui-field-title" style="width: inherit">
+                        <legend class="f20 layui-elip">行业翘楚</legend>
+                        <p class="f14 gray lh150 layui-elip">多项国家级奖项多项国家级奖项多项国家级奖项多项国家级奖项多项国家级奖项多项国家级奖项</p>
+                    </fieldset>
+                </a>
+            </li>
+            <li>
+                <a class="img-hover block w250" href="" title="行业翘楚">
+                    <div class="over_hide mb10">
+                        <img class="w" src="assets/img/advantage/advantage05.jpg">
+                    </div>
+                    <fieldset class="layui-field-title">
+                        <legend class="f20 layui-elip">行业翘楚</legend>
+                        <p class="f14 gray lh150 layui-elip">多项国家级奖项，</p>
+                    </fieldset>
+                </a>
+            </li>
+            <li>
+                <a class="img-hover block w250" href="" title="行业翘楚">
+                    <div class="over_hide mb10">
+                        <img class="w" src="assets/img/advantage/advantage05.jpg">
+                    </div>
+                    <fieldset class="layui-field-title">
+                        <legend class="f20 layui-elip">行业翘楚</legend>
+                        <p class="f14 gray lh150 layui-elip">多项国家级奖项，</p>
+                    </fieldset>
+                </a>
+            </li>
+            <li>
+                <a class="img-hover block w250" href="" title="行业翘楚">
+                    <div class="over_hide mb10">
+                        <img class="w" src="assets/img/advantage/advantage05.jpg">
+                    </div>
+                    <fieldset class="layui-field-title">
+                        <legend class="f20 layui-elip">行业翘楚</legend>
+                        <p class="f14 gray lh150 layui-elip">多项国家级奖项，</p>
+                    </fieldset>
+                </a>
+            </li>
+            <li>
+                <a class="img-hover block w250" href="" title="行业翘楚">
+                    <div class="over_hide mb10">
+                        <img class="w" src="assets/img/advantage/advantage05.jpg">
+                    </div>
+                    <fieldset class="layui-field-title">
+                        <legend class="f20 layui-elip">行业翘楚</legend>
+                        <p class="f14 gray lh150 layui-elip">多项国家级奖项，</p>
+                    </fieldset>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
 
 <!--客户信赖-->
 <div class="layui-main pb50">
@@ -549,6 +624,12 @@
     layui.config({
         base: 'assets/js/' //你存放新模块的目录，注意，不是layui的模块目录
     }).use('index'); //加载页面模块入口
+
+    /*初始化无缝滚动*/
+    $("#advantage").kxbdMarquee({
+        direction:"left",
+        isEqual: true
+    });
 
     /*初始化无缝滚动*/
     $("#partners").kxbdMarquee({
