@@ -37,6 +37,22 @@ layui.define(['layer', 'util','element'], function (exports) {
         util = layui.util;
 
     $('#login').on('click', function () {
+        $.ajax({
+            type: 'post',
+            url: "",
+            data: data,
+            dataType: 'json',
+            success: function (data) {
+                if(data.code == 200){
+                    openwindow(data.link, '', '585', '540')
+                }else{
+                    openLayer('用户登录', '../login/login_iframe.html', '440', '420');
+                }
+            },
+            error: function () {
+                layer.alert('请求错误')
+            }
+        });
         openLayer('用户登录', '../login/login_iframe.html', '440', '420');
     });
 
@@ -62,6 +78,18 @@ layui.define(['layer', 'util','element'], function (exports) {
         , bgcolor: '#393D49'
         , click: function (type) {
             if (type === 'bar1') {
+                $.ajax({
+                    type: 'post',
+                    url: "",
+                    data: data,
+                    dataType: 'json',
+                    success: function (data) {
+                        openwindow(data.link, '', '585', '540')
+                    },
+                    error: function () {
+                       layer.alert('请求错误')
+                    }
+                });
                 openwindow('http://p.qiao.baidu.com/cps/chat?siteId=11555035&userId=22742801', '', '585', '540')
             } else if (type === 'bar2') {
                 window.open('http://wpa.qq.com/msgrd?v=3&uin='+38873493+'&site=qq&menu=true')

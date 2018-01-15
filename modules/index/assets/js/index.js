@@ -15,16 +15,6 @@ layui.define(['layer', 'form','element','carousel','util'], function(exports){
         ,arrow: 'always' //始终显示箭头
         ,anim: 'fade' //切换动画方式
     });
-    //企业优势
-    carousel.render({
-        elem: '#advantage'
-        ,width: '100%' //设置容器宽度
-        ,autoplay: false
-        ,arrow: 'always' //始终显示箭头
-        ,interval: 5000 //切换间隔时间
-        ,indicator: 'none' //显示分页
-        ,anim: 'default' //切换动画方式
-    });
     //客户评价
     carousel.render({
         elem: '#customerVoice'
