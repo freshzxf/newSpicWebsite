@@ -59,3 +59,6 @@
 }
 /*隐藏百度地图版权标志*/
 .anchorBL{display:none;}
+.amap-logo,.amap-copyright{
+    display: none!important;
+}

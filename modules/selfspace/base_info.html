@@ -146,10 +146,11 @@
                 <li class="layui-this">用户基本信息</li>
                 <li>用电单元信息</li>
                 <li>用户登录信息</li>
+                <button id="editInfo" class="layui-btn layui-btn-primary layui-btn-sm fr">资料编辑</button>
             </ul>
             <div class="layui-tab-content pt20 pl0 pr0" >
                 <div class="layui-form layui-form-pane layui-tab-item layui-show">
-                    <form action="" method="post" lay-filter="baseInfo">
+                    <form action="" method="post" lay-filter="" id="baseInfo">
                         <div class="layui-collapse">
                             <div class="layui-colla-item">
                                 <h2 class="layui-colla-title">公司信息</h2>
@@ -164,7 +165,7 @@
                                                 </label>
                                                 <div class="layui-input-block">
                                                     <input lay-verify="required" type="text" class="layui-input"
-                                                           placeholder="请输入企业全称">
+                                                           placeholder="请输入企业全称" value="江西正能" disabled>
                                                 </div>
                                             </div>
                                             <!--行二-->
@@ -174,8 +175,8 @@
                                                     行业类别
                                                 </label>
                                                 <div class="layui-input-block">
-                                                    <select name="type" lay-verify="required">
-                                                        <option value="">请选择行业类别</option>
+                                                    <select name="type" lay-verify="required" disabled>
+                                                        <!--<option value="">请选择行业类别</option>-->
                                                         <option value="0">工业</option>
                                                         <option value="1">农业</option>
                                                         <option value="2">商业</option>
@@ -188,7 +189,7 @@
                                                     <span class="layui-badge-dot layui-badge pa"></span>
                                                     购售电结算单位</label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入购售电结算单位">
+                                                    <input disabled type="text" class="layui-input" value="江西某单位" disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -197,21 +198,21 @@
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label" title="营销客户数">营销客户数</label>
                                                 <div class="layui-input-block">
-                                                    <input type="number" class="layui-input" placeholder="请输入营销客户数">
+                                                    <input type="number" class="layui-input" placeholder="13" disabled>
                                                 </div>
                                             </div>
                                             <!--行五-->
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label" title="企业所在工业园区">企业所在工业园区</label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入企业所在工业园区">
+                                                    <input type="text" class="layui-input" placeholder="请输入企业所在工业园区" value="高新开发区" disabled>
                                                 </div>
                                             </div>
                                             <!--行六-->
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label" title="地理区域">地理区域</label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入地理区域">
+                                                    <input type="text" class="layui-input" placeholder="请输入地理区域" value="高新开发五路" disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -231,28 +232,28 @@
                                                 </label>
                                                 <div class="layui-input-block">
                                                     <input lay-verify="required" type="text" class="layui-input"
-                                                           placeholder="请输入公司法人代表（必填）">
+                                                           placeholder="请输入公司法人代表（必填）" value="王为民" disabled>
                                                 </div>
                                             </div>
                                             <!--行二-->
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label" title="社会信用代码">社会信用代码</label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入社会信用代码">
+                                                    <input type="text" class="layui-input" placeholder="请输入社会信用代码" value="xs32201224fs512" disabled>
                                                 </div>
                                             </div>
                                             <!--行三-->
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label" title="开户银行">开户银行</label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入开户银行号">
+                                                    <input type="text" class="layui-input" placeholder="请输入开户银行号" value="中国工商银行" disabled>
                                                 </div>
                                             </div>
                                             <!--行七-->
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label" title="企业注册地址">企业注册地址</label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入企业注册地址">
+                                                    <input type="text" class="layui-input" placeholder="请输入企业注册地址" value="南昌" disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -261,21 +262,21 @@
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label" title="开户名称">开户名称</label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入开户名称">
+                                                    <input type="text" class="layui-input" placeholder="请输入开户名称" value="工行" disabled>
                                                 </div>
                                             </div>
                                             <!--行五-->
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label" title="开户账号">开户账号</label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入卡户账号">
+                                                    <input type="text" class="layui-input" placeholder="请输入卡户账号" value="62701021352253" disabled>
                                                 </div>
                                             </div>
                                             <!--行六-->
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label" title="组织机构代码">组织机构代码</label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入组织机构代码">
+                                                    <input type="text" class="layui-input" placeholder="请输入组织机构代码" value="1515fdsfdsffd" disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -294,14 +295,14 @@
                                                     联系人姓名
                                                 </label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入联系人姓名（必填）">
+                                                    <input type="text" class="layui-input" placeholder="请输入联系人姓名（必填）" value="zxf" disabled>
                                                 </div>
                                             </div>
                                             <!--行二-->
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label" title="联系人职务">联系人职务</label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入联系人职务">
+                                                    <input type="text" class="layui-input" placeholder="请输入联系人职务" disabled value="运维总监">
                                                 </div>
                                             </div>
                                             <!--行三-->
@@ -311,21 +312,21 @@
                                                     联系人手机号
                                                 </label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入联系人手机号（必填）">
+                                                    <input type="text" class="layui-input" placeholder="请输入联系人手机号（必填）" value="1531232" disabled>
                                                 </div>
                                             </div>
                                             <!--行四-->
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label" title="联系人办公电话">联系人办公电话</label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入联系人办公电话">
+                                                    <input type="text" class="layui-input" placeholder="请输入联系人办公电话" value="15107037763" disabled>
                                                 </div>
                                             </div>
                                             <!--行五-->
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label" title="联系人邮箱">联系人邮箱</label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入联系人邮箱">
+                                                    <input type="text" class="layui-input" placeholder="请输入联系人邮箱" value="38875432@qq.com" disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -334,29 +335,29 @@
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label" title="网址">网址</label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" lay-verify="url" class="layui-input"
-                                                           placeholder="网站地址（如：www.xxx.com）">
+                                                    <input type="text" class="layui-input"
+                                                           placeholder="网站地址（如：www.xxx.com）" value="www.jxzn.com" disabled>
                                                 </div>
                                             </div>
                                             <!--行七-->
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label" title="邮编">邮编</label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入邮政编码">
+                                                    <input type="text" class="layui-input" placeholder="请输入邮政编码" value="334500" disabled>
                                                 </div>
                                             </div>
                                             <!--行八-->
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label" title="传真号码">传真</label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入传真号码">
+                                                    <input type="text" class="layui-input" placeholder="请输入传真号码" value="0791-83932265" disabled>
                                                 </div>
                                             </div>
                                             <!--行九-->
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label" title="通信地址">通信地址</label>
                                                 <div class="layui-input-block">
-                                                    <input type="text" class="layui-input" placeholder="请输入通信地址">
+                                                    <input type="text" class="layui-input" placeholder="请输入通信地址" value="ncu" disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -373,7 +374,7 @@
                                                 <label class="layui-form-label" title="最高供电电压">最高供电电压</label>
                                                 <div class="layui-input-block">
                                                     <input type="text" class="layui-input"
-                                                           placeholder="请输入最高供电电压">
+                                                           placeholder="请输入最高供电电压" value="3852" disabled>
                                                     <span class="unit">KV</span>
                                                 </div>
                                             </div>
@@ -382,7 +383,7 @@
                                                 <label class="layui-form-label" title="运行容量">运行容量</label>
                                                 <div class="layui-input-block">
                                                     <input type="text" class="layui-input"
-                                                           placeholder="请输入运行容量">
+                                                           placeholder="请输入运行容量" value="251" disabled>
                                                     <span class="unit">MVA</span>
                                                 </div>
                                             </div>
@@ -393,7 +394,7 @@
                                                 <label class="layui-form-label" title="合同容量">合同容量</label>
                                                 <div class="layui-input-block">
                                                     <input type="text" class="layui-input"
-                                                           placeholder="请输入合同容量">
+                                                           placeholder="请输入合同容量" value="885" disabled>
                                                     <span class="unit">MVA</span>
                                                 </div>
                                             </div>
@@ -402,8 +403,26 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mt20 pb10">
-                            <button class="layui-btn fl" lay-submit lay-filter="baseInfo">立即提交</button>
+                        <div class="layui-row mt15 layui-col-space30 hide" id="baseInfoSmt">
+                            <div class="layui-col-xs5">
+                                <div class="layui-form-item mb5">
+                                    <label class="layui-form-label" title="修改原因">修改原因</label>
+                                    <div class="layui-input-block">
+                                        <textarea placeholder="请简要说明修改原因" class="w" style="height: 36px;line-height: 36px;border-color: #e6e6e6;padding: 0 10px"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs5">
+                                <div class="layui-form-item mb5">
+                                    <label class="layui-form-label" title="修改确认函">确认函</label>
+                                    <div class="layui-input-block">
+                                        <input id="upload" lay-verify="required" type="text" name="upload" placeholder="点击上传文件" readonly style="cursor: pointer" class="layui-input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-col-xs2">
+                                <button type="button" class="layui-btn fr" lay-submit lay-filter="baseInfo">立即提交</button>
+                            </div>
                         </div>
                     </form>
                 </div>
