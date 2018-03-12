@@ -25,12 +25,11 @@ layui.define(['layer', 'table'], function(exports){
             ,dataName: 'data' //数据列表的字段名称，默认：data
         }
         ,cols: [[ //表头
-            {field: 'id', title: 'ID', width:60,sort: true, fixed: 'left'}
-            ,{field: 'fileName', title: '文件名称',width:500}
-            ,{field: 'fileExt', title: '文件格式',sort: true}
-            ,{field: 'fileSize', title: '文件大小',sort: true}
-            ,{field: 'uploadTime', title: '上传时间',sort: true}
-            ,{field: 'downloadTimes', title: '下载次数',sort: true}
+            {field: 'fileName', title: '文件名称',}
+            ,{field: 'fileExt', title: '文件格式',width:100,sort: true}
+            ,{field: 'fileSize', title: '文件大小',width:120,sort: true}
+            ,{field: 'uploadTime', title: '上传时间',width:120,sort: true}
+            ,{field: 'downloadTimes', title: '下载次数',width:100,sort: true}
             ,{field: 'download', title: '操作',width:150,align:'center', toolbar: '#toolBtns'}
         ]]
         , done: function(res, curr, count){
